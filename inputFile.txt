@@ -1,0 +1,14 @@
+3
+Jeff_Gordon 6708.62 40.7823 -73.9654
+Alain_Prost 100 30.2769 -97.7475
+Trey 23.45 34 54
+5
+Hughey -5973.48
+Dewey 10
+Louie 20
+Nic 681.24
+John 45
+3
+CLL College_Station 30.5885 -96.3639 2 airport car_rental
+Central_Park New_York 40.7823 -73.9654 3 park playground restaurant
+Library library_street 23 32 3 Books kids study
