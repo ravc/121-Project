@@ -5,6 +5,9 @@
 
 vector<string> tags;
 vector<string> inputTags;
+string name;
+string address;
+Geo_Loc location;
 
 Place_info::Place_info(string inputName, string inputAddress, inputTags, Geo_Loc inputLocation) :
 name(inputName), address(inputAddress), tags(inputTags), location(inputLocation) {}

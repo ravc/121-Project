@@ -1,12 +1,15 @@
 #include "std_lib_facilities_4.h"
 #include "Geo_loc.h"
 
-Geo_loc::Geo_loc(double x, double y) : lat(x), lon(y) {}
+double lat;
+double lon;
 
-double Geo_loc::getLatitude() { return lat; }
+Geo_Loc::Geo_Loc(double x, double y) : lat(x), lon(y) {}
 
-double Geo_loc::getLongitude() { return lon; }
+double Geo_Loc::getLatitude() { return lat; }
 
-double Geo_loc::getDistance(Geo_loc a, Geo_loc b) {
+double Geo_Loc::getLongitude() { return lon; }
+
+double Geo_Loc::getDistance(Geo_Loc a, Geo_Loc b) {
     return geoDistanceCalculator(a.getLatitude(), a.getLongitude(), b.getLatitude(), b.getLongitude());
 }
