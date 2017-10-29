@@ -1,0 +1,8 @@
+The master file format is:
+First line(x): number of drivers
+next x lines: Drivername Drivermoney lon lat
+Line after that (y): number of customers
+next y lines: Custoname Customoney
+line after that (z): number of places
+next z lines: Planename Placeaddress lon lat numtags(n) tag1 tag2 ... tagn
+
