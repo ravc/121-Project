@@ -86,7 +86,7 @@ void Main_Window::quit(){
     hide()
 }
 void Main_Window::cb_quit(Address, Address pw){
-    reference_to<main_window>(pw).quit();
+    reference_to<Main_Window>(pw).quit();
 }
 
 void Main_Window::custMenuButton() {
@@ -94,7 +94,7 @@ void Main_Window::custMenuButton() {
     customerMenu.show();
 }
 void Main_Window::cb_custMenuButton(Address, Address pw) {
-    reference_to<main_window>(pw).custMenuButton();
+    reference_to<Main_Window>(pw).custMenuButton();
 }
 
 void Main_Window::driverMenuButton() {
@@ -102,7 +102,7 @@ void Main_Window::driverMenuButton() {
     driverMenu.show();
 }
 void Main_Window::cb_driverMenuButton(Address, Address pw) {
-    reference_to<main_window>(pw).driverMenuButton();
+    reference_to<Main_Window>(pw).driverMenuButton();
 }
 
 void Main_Window::placeMenuButton() {
@@ -110,7 +110,7 @@ void Main_Window::placeMenuButton() {
     placeMenu.show();
 }
 void Main_Window::cb_placeMenuButton(Address, Address pw) {
-    reference_to<main_window>(pw).placeMenuButton();
+    reference_to<Main_Window>(pw).placeMenuButton();
 }
 
 void Main_Window::rideMenuButton() {
@@ -118,7 +118,7 @@ void Main_Window::rideMenuButton() {
     rideMenu.show();
 }
 void Main_Window::cb_rideMenuButton(Address, Address pw) {
-    reference_to<main_window>(pw).rideMenuButton();
+    reference_to<Main_Window>(pw).rideMenuButton();
 }
 
 void Main_Window::displayMenuButton() {
@@ -126,82 +126,82 @@ void Main_Window::displayMenuButton() {
     displayMenu.show();
 }
 void Main_Window::cb_displayMenuButton(Address, Address pw) {
-    reference_to<main_window>(pw).displayMenuButton();
+    reference_to<Main_Window>(pw).displayMenuButton();
 }
 
 void Main_Window::addCustomer() {
     
 }
 void Main_Window::cb_addCustomer(Address, Address pw) {
-    reference_to<main_window>(pw).addCustomer();
+    reference_to<Main_Window>(pw).addCustomer();
 }
 
 void Main_Window::removeCustomer() {
     
 }
 void Main_Window::cb_removeCustomer(Address, Address pw) {
-    reference_to<main_window>(pw).removeCustomer();
+    reference_to<Main_Window>(pw).removeCustomer();
 }
 
 void Main_Window::addDriver() {
     
 }
 void Main_Window::cb_addDriver(Address, Address pw) {
-    reference_to<main_window>(pw).addDriver();
+    reference_to<Main_Window>(pw).addDriver();
 }
 
 void Main_Window::removeDriver() {
     
 }
 void Main_Window::cb_removeDriver(Address, Address pw) {
-    reference_to<main_window>(pw).removeDriver();
+    reference_to<Main_Window>(pw).removeDriver();
 }
 
 void Main_Window::addPlace() {
     
 }
 void Main_Window::cb_addPlace(Address, Address pw) {
-    reference_to<main_window>(pw).addPlaces();
+    reference_to<Main_Window>(pw).addPlaces();
 }
 
 void Main_Window::removePlace() {
     
 }
 void Main_Window::cb_removePlace(Address, Address pw) {
-    reference_to<main_window>(pw).removePlace();
+    reference_to<Main_Window>(pw).removePlace();
 }
 
 void Main_Window::payBalance() {
     
 }
 void Main_Window::cb_payBalance(Address, Address pw) {
-    reference_to<main_window>(pw).payBalance();
+    reference_to<Main_Window>(pw).payBalance();
 }
 
 void Main_Window::requestRide() {
     
 }
 void Main_Window::cb_requestRide(Address, Address pw) {
-    reference_to<main_window>(pw).requestRide();
+    reference_to<Main_Window>(pw).requestRide();
 }
 
 void Main_Window::displayCustomers() {
     
 }
 void Main_Window::cb_displayCustomers(Address, Address pw) {
-    reference_to<main_window>(pw).displayCustomers();
+    reference_to<Main_Window>(pw).displayCustomers();
 }
 
 void Main_Window::displayDrivers() {
     
 }
 void Main_Window::cb_displayDrivers(Address, Address pw) {
-    reference_to<main_window>(pw).displayDrivers();
+    reference_to<Main_Window>(pw).displayDrivers();
 }
 
 void Main_Window::displayPlaces() {
     
 }
 void Main_Window::cb_displayPlaces(Address, Address pw) {
-    reference_to<main_window>(pw).displayPlaces();
+    reference_to<Main_Window>(pw).displayPlaces();
 }

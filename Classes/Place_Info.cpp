@@ -1,5 +1,5 @@
 #include "std_lib_facilities_4.h"
-#include "Place_info.h"
+#include "Place_Info.h"
 //The Place_info class holds all of the information about a certain place. 
 //This consists of the geo_loc of their coordinates as well as the name of the place and certain keys that could be used to describe it
 
