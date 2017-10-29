@@ -9,6 +9,7 @@ Place_Info currentLocation;
 
 customers::customers(string inputName, double inputAccountbalance) :
     name(inputName), accountBalance(inputAccountbalance), currentLocation(Place_Info("", "", emptyKeys, Geo_Loc(0, 0))) {}
+customers::customers() {}
 int customers::getAccountNumber() { return accountNumber; }
 double customers::getAccountBalance() { return accountBalance; }
 void customers::addAmountOwed(double amount) { accountBalance -= amount; }

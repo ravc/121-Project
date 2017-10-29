@@ -7,7 +7,8 @@
 class drivers {
 public:
     drivers(Geo_Loc location, string inputName, double balance);
-    Geo_Loc getCurrentLocation();
+	drivers();
+	Geo_Loc getCurrentLocation();
     double getCurrentPaycheck();
     void addMoney(double amount);
     string getName();
