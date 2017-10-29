@@ -3,51 +3,6 @@
 #include "Main_Window.h"
 
 Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting up the window and buttons
-<<<<<<< HEAD
-    Window(xy,w,h,title),
-    quit_button(Point(x_max()-70,0), 70, 20, "Quit", cb_quit),
-    cust_menu_button(Point(0,0),100,20,"Customer Menu",cb_custMenuButton)
-	customerMenu(Point(0,0),100,20,Menu::vertical,"Customer Menu"),
-	driver_menu_button(Point(100, 0), 100, 20, "Driver Menu",cb_driverMenuButton)
-	driverMenu(Point(100,0),100,20,Menu::vertical,"Driver Menu"),
-	place_menu_button(Point(200, 0), 100, 20, "Place Menu",cb_placeMenuButton)
-	placeMenu(Point(200,0),100,20,Menu::vertical,"Place Menu"),
-	ride_menu_button(Point(300, 0), 100, 20, "Ride Menu",cb_rideMenuButton)
-	rideMenu(Point(300,0),100,20,Menu::vertical,"Ride Menu"),
-	display_menu_button(Point(400, 0), 100, 20, "Display Menu"cb_displayMenuButton)
-	displayMenu(Point(400,0),100,20,Menu::vertical,"Display"),
-	{
-		customerMenu.attach(new Button(Point(0, 0), 0, 0, "Add Customer",cb_addCustomer));
-		customerMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Customer", cb_removeCustomer));
-		driverMenu.attach(new Button(Point(0, 0), 0, 0, "Add Driver", cb_addDriver));
-		driverMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Driver", cb_removeDriver));
-		placeMenu.attach(new Button(Point(0, 0), 0, 0, "Add Place", cb_addPlace));
-		placeMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Place", cb_removePlace));
-		rideMenu.attach(new Button(Point(0, 0), 0, 0, "Pay Balance", cb_payBalance));
-		rideMenu.attach(new Button(Point(0, 0), 0, 0, "Request Ride", cb_requestRide));
-		displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Customers", cb_displayCustomers));
-		displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Drivers", cb_displayDrivers));
-		displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Places", cb_displayPlaces));
-		attach(quit_button);
-		attach(cust_menu_button);
-		attach(driver_menu_button);
-		attach(place_menu_button);
-		attach(ride_menu_button);
-		attach(display_menu_button);
-		attach(customerMenu);
-		attach(driverMenu);
-		attach(placeMenu);
-		attach(rideMenu);
-		attach(displayMenu);
-		customerMenu.hide();
-		driverMenu.hide();
-		placeMenu.hide();
-		rideMenu.hide();
-		displayMenu.hide();
-
-
-    }
-=======
 Window(xy,w,h,title),
 quit_button(Point(x_max()-70,0), 70, 20, "Quit", cb_quit),
 cust_menu_button(Point(0,0),100,20,"Customer Menu",cb_custMenuButton)
@@ -73,14 +28,24 @@ displayMenu(Point(400,0),100,20,Menu::vertical,"Display"),
     displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Drivers", cb_displayDrivers));
     displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Places", cb_displayPlaces));
     attach(quit_button);
+    attach(cust_menu_button);
+    attach(driver_menu_button);
+    attach(place_menu_button);
+    attach(ride_menu_button);
+    attach(display_menu_button);
     attach(customerMenu);
     attach(driverMenu);
     attach(placeMenu);
     attach(rideMenu);
     attach(displayMenu);
+    customerMenu.hide();
+    driverMenu.hide();
+    placeMenu.hide();
+    rideMenu.hide();
+    displayMenu.hide();
+    
     
 }
->>>>>>> 6912ad061aa580eb5a0384ae34ae09c5e9632d1d
 
 void Main_Window::quit(){
     hide()
