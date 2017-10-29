@@ -48,7 +48,7 @@ displayMenu(Point(400,0),100,20,Menu::vertical,"Display"),
 }
 
 void Main_Window::quit(){
-    hide()
+    hide();
 }
 void Main_Window::cb_quit(Address, Address pw){
     reference_to<Main_Window>(pw).quit();
@@ -170,3 +170,5 @@ void Main_Window::displayPlaces() {
 void Main_Window::cb_displayPlaces(Address, Address pw) {
     reference_to<Main_Window>(pw).displayPlaces();
 }
+
+#endif

@@ -1,5 +1,5 @@
 #include "std_lib_facilities_4.h"
-#include "Geo_loc.h"
+#include "Geo_Loc.h"
 
 double lat;
 double lon;
