@@ -22,6 +22,7 @@ private:
     
     void quit();
     static void cb_quit(Address, Address);
+
     void custMenubutton();
     static void cb_custMenubutton(Address, Address pw);
     
