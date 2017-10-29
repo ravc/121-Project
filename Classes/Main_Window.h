@@ -7,5 +7,7 @@ struct main_window : Graph_lib::Window{
 public:
     
 private:
-    void quit()
+    void quit();
+    
+    static void cb_quit(Address, Address);
 };
