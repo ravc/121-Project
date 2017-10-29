@@ -10,14 +10,14 @@ public:
     int getAccountNumber();
     double getAccountBalance();
     void addAmountOwed(double amount);
-    Place_info getCurrentLocation();
+    Place_Info getCurrentLocation();
     void makePayment(double payment);
     string getName();
-    void changeLocation(Place_info loc);
+    void changeLocation(Place_Info loc);
 private:
     int accountNumber;
     double accountBalance;
-    Place_info currentLocation;
+    Place_Info currentLocation;
     string name;
 };
 #endif
