@@ -5,6 +5,7 @@ double lat;
 double lon;
 
 Geo_Loc::Geo_Loc(double x, double y) : lat(x), lon(y) {}
+Geo_Loc::Geo_Loc() {}
 
 double Geo_Loc::getLatitude() { return lat; }
 

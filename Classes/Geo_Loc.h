@@ -7,7 +7,7 @@ class Geo_Loc {
     
 public:
     Geo_Loc(double x, double y);
-    
+	Geo_Loc();
     double getLatitude();
     
     double getLongitude();

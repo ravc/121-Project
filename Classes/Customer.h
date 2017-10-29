@@ -7,6 +7,7 @@
 class customers {
 public:
     customers(string inputName, double inputAccountbalance);
+	customers();
     int getAccountNumber();
     double getAccountBalance();
     void addAmountOwed(double amount);

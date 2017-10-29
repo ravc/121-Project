@@ -10,7 +10,8 @@ class Place_Info {
     
 public:
     Place_Info(string inputName, string inputAddress, vector<string> inputTags, Geo_Loc inputLocation);
-    string getName();
+	Place_Info();
+	string getName();
     string getAddress();
     vector<string> getTags();
     Geo_Loc getLocation();
