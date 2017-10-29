@@ -8,12 +8,12 @@ public:
     Main_Window(Point xy, int w, int h, const string& title);
     
 private:
-	button quit_button;
-	button cust_menu_button;
-	button driver_menu_button;
-	button place_menu_button;
-	button ride_menu_button;
-	button display_menu_button;
+	Button quit_button;
+	Button cust_menu_button;
+	Button driver_menu_button;
+	Button place_menu_button;
+	Button ride_menu_button;
+	Button display_menu_button;
 	menu customerMenu;
 	menu driverMenu;
 	menu placeMenu;
@@ -22,20 +22,20 @@ private:
 	
 	void quit();
     static void cb_quit(Address, Address);
-	void custMenuButton();
-	void cb_custMenuButton(Address, Address pw);
+	void custMenubutton();
+	void cb_custMenubutton(Address, Address pw);
 
-	void driverMenuButton();
-	void cb_driverMenuButton(Address, Address pw);
+	void driverMenubutton();
+	void cb_driverMenubutton(Address, Address pw);
 
-	void placeMenuButton();
-	void cb_placeMenuButton(Address, Address pw);
+	void placeMenubutton();
+	void cb_placeMenubutton(Address, Address pw);
 
-	void rideMenuButton();
-	void cb_rideMenuButton(Address, Address pw);
+	void rideMenubutton();
+	void cb_rideMenubutton(Address, Address pw);
 
-	void displayMenuButton();
-	void cb_displayMenuButton(Address, Address pw);
+	void displayMenubutton();
+	void cb_displayMenubutton(Address, Address pw);
 
 	void addCustomer();
 	void cb_addCustomer(Address, Address pw);

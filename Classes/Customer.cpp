@@ -1,4 +1,7 @@
 #include "Customer.h"
+#include "std_lib_facilities_4.h"
+
+vector<string> emptyKeys
 
 customers::customers(string inputName, double inputAccountbalance) :
     name(inputName), accountBalance(inputAccountbalance), currentLocation(Place_info("", "", emptyKeys, Geo_loc(0, 0))) {}
