@@ -6,16 +6,16 @@
 //It contains information about the driver such as user number, name, account balance and current location
 class drivers {
 public:
-	drivers(Geo_loc location, string inputName, double balance);
-	Geo_loc getCurrentLocation();
-	double getCurrentPaycheck();
-	void addMoney(double amount);
-	string getName();
-	void changeLocation(Geo_loc loc);
+    drivers(Geo_loc location, string inputName, double balance);
+    Geo_loc getCurrentLocation();
+    double getCurrentPaycheck();
+    void addMoney(double amount);
+    string getName();
+    void changeLocation(Geo_loc loc);
 private:
-	Geo_loc currentLocation;
-	double currentPaycheck;
-	string name;
-
+    Geo_loc currentLocation;
+    double currentPaycheck;
+    string name;
+    
 };
 #endif
