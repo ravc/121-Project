@@ -17,3 +17,8 @@ Seperate header files for each class (place,drivers,customers,images)
 window/graphics files
 master file (all customer, driver and place info)
 main file 
+
+
+
+USE THIS TO COMPILE
+g++ -std=c++17 *cpp Classes/*cpp Classes/Graphics/*cpp -lfltk -lfltk_images
