@@ -54,7 +54,7 @@ void Main_Window::cb_quit(Address, Address pw){
     reference_to<Main_Window>(pw).quit();
 }
 
-void Main_Window::custMenuButton() {
+void Main_Window::cust_menu_button() {
     cust_menu_button.hide();
     customerMenu.show();
 }
@@ -62,7 +62,7 @@ void Main_Window::cb_custMenuButton(Address, Address pw) {
     reference_to<Main_Window>(pw).custMenuButton();
 }
 
-void Main_Window::driverMenuButton() {
+void Main_Window::driver_menu_button() {
     driver_menu_button.hide();
     driverMenu.show();
 }
@@ -70,7 +70,7 @@ void Main_Window::cb_driverMenuButton(Address, Address pw) {
     reference_to<Main_Window>(pw).driverMenuButton();
 }
 
-void Main_Window::placeMenuButton() {
+void Main_Window::place_menu_button() {
     place_menu_button.hide();
     placeMenu.show();
 }
@@ -78,7 +78,7 @@ void Main_Window::cb_placeMenuButton(Address, Address pw) {
     reference_to<Main_Window>(pw).placeMenuButton();
 }
 
-void Main_Window::rideMenuButton() {
+void Main_Window::ride_menu_button() {
     ride_menu_button.hide();
     rideMenu.show();
 }
@@ -86,7 +86,7 @@ void Main_Window::cb_rideMenuButton(Address, Address pw) {
     reference_to<Main_Window>(pw).rideMenuButton();
 }
 
-void Main_Window::displayMenuButton() {
+void Main_Window::display_menu_button() {
     display_menu_button.hide();
     displayMenu.show();
 }
