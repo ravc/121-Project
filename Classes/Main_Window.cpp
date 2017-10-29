@@ -28,11 +28,22 @@ Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting
 		displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Drivers", cb_displayDrivers));
 		displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Places", cb_displayPlaces));
 		attach(quit_button);
+		attach(cust_menu_button);
+		attach(driver_menu_button);
+		attach(place_menu_button);
+		attach(ride_menu_button);
+		attach(display_menu_button);
 		attach(customerMenu);
 		attach(driverMenu);
 		attach(placeMenu);
 		attach(rideMenu);
 		attach(displayMenu);
+		customerMenu.hide();
+		driverMenu.hide();
+		placeMenu.hide();
+		rideMenu.hide();
+		displayMenu.hide();
+
 
     }
 
