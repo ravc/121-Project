@@ -1,7 +1,7 @@
 #include "Customer.h"
 
 customers::customers(string inputName, double inputAccountbalance) :
-	name(inputName), accountBalance(inputAccountbalance), currentLocation(Place_info("", "", emptyKeys, Geo_loc(0, 0))) {}
+    name(inputName), accountBalance(inputAccountbalance), currentLocation(Place_info("", "", emptyKeys, Geo_loc(0, 0))) {}
 int customers::getAccountNumber() { return accountNumber; }
 double customers::getAccountBalance() { return accountBalance; }
 void customers::addAmountOwed(double amount) { accountBalance -= amount; }
