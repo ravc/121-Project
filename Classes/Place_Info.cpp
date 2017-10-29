@@ -7,11 +7,7 @@ vector<string> tags;
 string name;
 string address;
 Geo_Loc location;
-<<<<<<< HEAD
 Place_Info::Place_Info() {}
-=======
-
->>>>>>> fcc8d0565d44c89c013e0723459d384f0be06540
 Place_Info::Place_Info(string inputName, string inputAddress, vector<string> inputTags, Geo_Loc inputLocation) :
 name(inputName), address(inputAddress), tags(inputTags), location(inputLocation) {}
 string Place_Info::getName() { return name; }
