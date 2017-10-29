@@ -7,20 +7,20 @@
 //This consists of the geo_loc of their coordinates as well as the name of the place and certain keys that could be used to describe it
 
 class Place_info {
-
+    
 public:
-	Place_info(string inputName, string inputAddress, vector<string> inputTags, Geo_loc inputLocation);
-	string getName();
-	string getAddress();
-	vector<string> getTags();
-	Geo_loc getLocation();
-
-
+    Place_info(string inputName, string inputAddress, vector<string> inputTags, Geo_loc inputLocation);
+    string getName();
+    string getAddress();
+    vector<string> getTags();
+    Geo_loc getLocation();
+    
+    
 private:
-	string name;
-	string address;
-	vector<string> tags;
-	Geo_loc location;
+    string name;
+    string address;
+    vector<string> tags;
+    Geo_loc location;
 };
 
 #endif
