@@ -3,8 +3,8 @@
 #include "Classes/Driver.h"
 #include "Classes/Place_Info.h"
 #include "Classes/Geo_Loc.h"
-#include "Classes/Main_WIndow.h"
+#include "Classes/Main_Window.h"
 
 int main(){
-    
+    Main_Window win(Point(100,100),600,400,"My Ride");
 }
