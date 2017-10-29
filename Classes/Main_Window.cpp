@@ -170,3 +170,5 @@ void Main_Window::displayPlaces() {
 void Main_Window::cb_displayPlaces(Address, Address pw) {
     reference_to<Main_Window>(pw).displayPlaces();
 }
+
+#endif
