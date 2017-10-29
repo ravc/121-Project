@@ -23,50 +23,50 @@ private:
     void quit();
     static void cb_quit(Address, Address);
     void custMenubutton();
-    void cb_custMenubutton(Address, Address pw);
+    static void cb_custMenubutton(Address, Address pw);
     
     void driverMenubutton();
-    void cb_driverMenubutton(Address, Address pw);
+    static void cb_driverMenubutton(Address, Address pw);
     
     void placeMenubutton();
-    void cb_placeMenubutton(Address, Address pw);
+    static void cb_placeMenubutton(Address, Address pw);
     
     void rideMenubutton();
-    void cb_rideMenubutton(Address, Address pw);
+    static void cb_rideMenubutton(Address, Address pw);
     
     void displayMenubutton();
-    void cb_displayMenubutton(Address, Address pw);
+    static void cb_displayMenubutton(Address, Address pw);
     
     void addCustomer();
-    void cb_addCustomer(Address, Address pw);
+    static void cb_addCustomer(Address, Address pw);
     
     void removeCustomer();
-    void cb_removeCustomer(Address, Address pw);
+    static void cb_removeCustomer(Address, Address pw);
     
     void addDriver();
-    void cb_addDriver(Address, Address pw);
+    static void cb_addDriver(Address, Address pw);
     
     void removeDriver();
-    void cb_removeDriver(Address, Address pw);
+    static void cb_removeDriver(Address, Address pw);
     
     void addPlace();
-    void cb_addPlace(Address, Address pw);
+    static void cb_addPlace(Address, Address pw);
     
     void removePlace();
-    void cb_removePlace(Address, Address pw);
+    static void cb_removePlace(Address, Address pw);
     
     void payBalance();
-    void cb_payBalance(Address, Address pw);
+    static void cb_payBalance(Address, Address pw);
     
     void requestRide();
-    void cb_requestRide(Address, Address pw);
+    static void cb_requestRide(Address, Address pw);
     
     void displayCustomers();
-    void cb_displayCustomers(Address, Address pw);
+    static void cb_displayCustomers(Address, Address pw);
     
     void displayDrivers();
-    void cb_displayDrivers(Address, Address pw);
+    static void cb_displayDrivers(Address, Address pw);
     
     void displayPlaces();
-    void cb_displayPlaces(Address, Address pw);
+    static void cb_displayPlaces(Address, Address pw);
 };
