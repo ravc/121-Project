@@ -18,7 +18,7 @@ public:
     
     
 private:
-    string name;
+    string placename;
     string address;
     vector<string> tags;
     Geo_Loc location;

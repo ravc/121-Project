@@ -19,6 +19,6 @@ private:
     int accountNumber;
     double accountBalance;
     Place_Info currentLocation;
-    string name;
+    string custname;
 };
 #endif

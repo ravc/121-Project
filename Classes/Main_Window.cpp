@@ -5,16 +5,16 @@
 Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting up the window and buttons
 Window(xy,w,h,title),
 quit_button(Point(x_max()-70,0), 70, 20, "Quit", cb_quit),
-cust_menu_button(Point(0,0),100,20,"Customer Menu",cb_custMenuButton)
+cust_menu_button(Point(0,0),100,20,"Customer Menu",cb_custMenuButton),
 customerMenu(Point(0,0),100,20,Menu::vertical,"Customer Menu"),
-driver_menu_button(Point(100, 0), 100, 20, "Driver Menu",cb_driverMenuButton)
+driver_menu_button(Point(100, 0), 100, 20, "Driver Menu",cb_driverMenuButton),
 driverMenu(Point(100,0),100,20,Menu::vertical,"Driver Menu"),
-place_menu_button(Point(200, 0), 100, 20, "Place Menu",cb_placeMenuButton)
+place_menu_button(Point(200, 0), 100, 20, "Place Menu",cb_placeMenuButton),
 placeMenu(Point(200,0),100,20,Menu::vertical,"Place Menu"),
-ride_menu_button(Point(300, 0), 100, 20, "Ride Menu",cb_rideMenuButton)
+ride_menu_button(Point(300, 0), 100, 20, "Ride Menu",cb_rideMenuButton),
 rideMenu(Point(300,0),100,20,Menu::vertical,"Ride Menu"),
-display_menu_button(Point(400, 0), 100, 20, "Display Menu"cb_displayMenuButton)
-displayMenu(Point(400,0),100,20,Menu::vertical,"Display"),
+display_menu_button(Point(400, 0), 100, 20, "Display Menu",cb_displayMenuButton),
+displayMenu(Point(400,0),100,20,Menu::vertical,"Display")
 {
     customerMenu.attach(new Button(Point(0, 0), 0, 0, "Add Customer",cb_addCustomer));
     customerMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Customer", cb_removeCustomer));
@@ -126,7 +126,7 @@ void Main_Window::addPlace() {
     
 }
 void Main_Window::cb_addPlace(Address, Address pw) {
-    reference_to<Main_Window>(pw).addPlaces();
+    reference_to<Main_Window>(pw).addPlace();
 }
 
 void Main_Window::removePlace() {

@@ -23,20 +23,20 @@ private:
     void quit();
     static void cb_quit(Address, Address);
 
-    void custMenubutton();
-    static void cb_custMenubutton(Address, Address pw);
+    void custMenuButton();
+    static void cb_custMenuButton(Address, Address pw);
     
-    void driverMenubutton();
-    static void cb_driverMenubutton(Address, Address pw);
+    void driverMenuButton();
+    static void cb_driverMenuButton(Address, Address pw);
     
-    void placeMenubutton();
-    static void cb_placeMenubutton(Address, Address pw);
+    void placeMenuButton();
+    static void cb_placeMenuButton(Address, Address pw);
     
-    void rideMenubutton();
-    static void cb_rideMenubutton(Address, Address pw);
+    void rideMenuButton();
+    static void cb_rideMenuButton(Address, Address pw);
     
-    void displayMenubutton();
-    static void cb_displayMenubutton(Address, Address pw);
+    void displayMenuButton();
+    static void cb_displayMenuButton(Address, Address pw);
     
     void addCustomer();
     static void cb_addCustomer(Address, Address pw);

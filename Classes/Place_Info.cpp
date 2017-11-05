@@ -9,7 +9,7 @@ string address;
 Geo_Loc location;
 Place_Info::Place_Info() {}
 Place_Info::Place_Info(string inputName, string inputAddress, vector<string> inputTags, Geo_Loc inputLocation) :
-name(inputName), address(inputAddress), tags(inputTags), location(inputLocation) {}
+placename(inputName), address(inputAddress), tags(inputTags), location(inputLocation) {}
 string Place_Info::getName() { return name; }
 string Place_Info::getAddress() { return address; }
 vector<string> Place_Info::getTags() { return tags; }

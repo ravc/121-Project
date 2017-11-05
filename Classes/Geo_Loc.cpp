@@ -12,5 +12,5 @@ double Geo_Loc::getLatitude() { return lat; }
 double Geo_Loc::getLongitude() { return lon; }
 
 double Geo_Loc::getDistance(Geo_Loc a, Geo_Loc b) {
-    return geoDistanceCalculator(a.getLatitude(), a.getLongitude(), b.getLatitude(), b.getLongitude());
+    //return geoDistanceCalculator(a.getLatitude(), a.getLongitude(), b.getLatitude(), b.getLongitude());
 }

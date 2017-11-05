@@ -14,9 +14,9 @@ public:
     string getName();
     void changeLocation(Geo_Loc loc);
 private:
-    Geo_Loc currentLocation;
+    Geo_Loc currentLoc;
     double currentPaycheck;
-    string name;
+    string drivername;
     
 };
 #endif
