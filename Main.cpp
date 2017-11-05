@@ -6,5 +6,8 @@
 #include "Classes/Main_Window.h"
 
 int main(){
-    Main_Window win(Point(100,100),600,400,"My Ride");
+    while(True){
+        Main_Window win(Point(100,100),600,400,"My Ride");
+        return gui_main();
+    }
 }
