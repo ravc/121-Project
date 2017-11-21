@@ -15,13 +15,13 @@ private:
     
     void exit();
     void back();
-    void print_all;
-    void print_neg;
-    void next;
+    void print_all();
+    void print_neg();
+    void next();
     
     static void cb_exit(Address, Address pw);
     static void cb_back(Address, Address pw);
     static void cb_print_all(Address, Address pw);
     static void cb_print_neg(Address, Address pw);
     static void cb_next(Address, Address pw);
-}
+};
