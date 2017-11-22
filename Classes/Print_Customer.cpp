@@ -22,7 +22,7 @@ void Print_Customer::exit(){
     hide();
 }
 void Print_Customer::back(){
-    //not sure how to go back to previous window yet
+    hide();
 }
 void Print_Customer::print_all(){
     //will create next window soon
