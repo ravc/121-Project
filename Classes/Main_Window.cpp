@@ -3,6 +3,7 @@
 #include "Main_Window.h"
 #include "Print_Customer.h"
 #include "Print_Drivers.h"
+#include "Print_Places.h"
 
 Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting up the window and buttons
 Window(xy,w,h,title),
@@ -172,8 +173,11 @@ void Main_Window::cb_displayDrivers(Address, Address pw) {
     reference_to<Main_Window>(pw).displayDrivers();
 }
 
-void Main_Window::displayPlaces() {
-    
+int Main_Window::displayPlaces() {
+    while(true){
+        Print_Places win(Point(100,100),600,400,"My Ride");
+        return gui_main();
+    }
 }
 void Main_Window::cb_displayPlaces(Address, Address pw) {
     reference_to<Main_Window>(pw).displayPlaces();

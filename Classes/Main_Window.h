@@ -68,6 +68,6 @@ private:
     int displayDrivers();
     static void cb_displayDrivers(Address, Address pw);
     
-    void displayPlaces();
+    int displayPlaces();
     static void cb_displayPlaces(Address, Address pw);
 };
