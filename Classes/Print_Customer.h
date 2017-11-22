@@ -15,7 +15,7 @@ private:
     
     void exit();
     void back();
-    void print_all();
+    int print_all();
     void print_neg();
     void next();
     

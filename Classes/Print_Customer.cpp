@@ -1,6 +1,7 @@
 # ifndef Print_Customer_H
 # define Print_Customer_H
 #include "Print_Customer.h"
+#include "Print_All_Customer.h"
 
 Print_Customer::Print_Customer(Point xy, int w, int h, const string& title):
 
@@ -24,8 +25,11 @@ void Print_Customer::exit(){
 void Print_Customer::back(){
     hide();
 }
-void Print_Customer::print_all(){
-    //will create next window soon
+int Print_Customer::print_all(){
+    while(true){
+        Print_All_Customer win(Point(100,100),600,400,"My Ride");
+        return gui_main();
+    }
 }
 void Print_Customer::print_neg(){
     //coming to a program near you

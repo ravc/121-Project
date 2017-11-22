@@ -5,16 +5,13 @@ using namespace Graph_lib;
 
 struct Print_All_Customer : Graph_lib::Window{
 public:
-    Print_Customer(Point xy, int w, int h, const string& title);
+    Print_All_Customer(Point xy, int w, int h, const string& title);
 private:
     Button next_button;
     Button exit_button;
-    Box* image_box;
-    Scroll scroll_bar;
-    Image* image_display;
     
-    void next;
-    void exit;
+    void next();
+    void exit();
     
     static void cb_next(Address, Address pw);
     static void cb_exit(Address, Address pw);
