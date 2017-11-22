@@ -9,7 +9,13 @@ public:
 private:
     Button next_button;
     Button exit_button;
-    Box image_box_button;
+    Box* image_box;
     Scroll scroll_bar;
-    Image image_display;
+    Image* image_display;
+    
+    void next;
+    void exit;
+    
+    static void cb_next(Address, Address pw);
+    static void cb_exit(Address, Address pw);
 };
