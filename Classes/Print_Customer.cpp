@@ -7,9 +7,9 @@ Print_Customer::Print_Customer(Point xy, int w, int h, const string& title):
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
 back_button(Point(0,0), 70, 20, "back", cb_back),
-print_all_button(Point((x_max()/2-45), 70), 70, 20, "Print All", cb_print_all),
-print_neg_button(Point((x_max()/2+45), 70), 70, 20, "Print Negative", cb_print_neg),
-next_button(Point((x_max()/2-35), 70), 70, 20, "Continue", cb_next)
+print_all_button(Point((x_max()/2-200), 70), 100, 20, "Print All", cb_print_all),
+print_neg_button(Point((x_max()/2+100), 70), 100, 20, "Print Negative", cb_print_neg),
+next_button(Point((x_max()/2-50), 200), 100, 20, "Continue", cb_next)
 {
     attach(exit_button);
     attach(back_button);

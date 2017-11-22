@@ -1,6 +1,7 @@
 # ifndef Main_Window_H
 # define Main_Window_H
 #include "Main_Window.h"
+#include "Print_Customer.h"
 
 Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting up the window and buttons
 Window(xy,w,h,title),
@@ -150,8 +151,11 @@ void Main_Window::cb_requestRide(Address, Address pw) {
     reference_to<Main_Window>(pw).requestRide();
 }
 
-void Main_Window::displayCustomers() {
-    
+int Main_Window::displayCustomers() {
+    while(True){
+        Print_Customer win(Point(100,100),600,400,"My Ride");
+        return gui_main();
+    }
 }
 void Main_Window::cb_displayCustomers(Address, Address pw) {
     reference_to<Main_Window>(pw).displayCustomers();

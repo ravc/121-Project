@@ -62,7 +62,7 @@ private:
     void requestRide();
     static void cb_requestRide(Address, Address pw);
     
-    void displayCustomers();
+    int displayCustomers();
     static void cb_displayCustomers(Address, Address pw);
     
     void displayDrivers();
