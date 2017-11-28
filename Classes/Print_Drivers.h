@@ -1,12 +1,13 @@
 #include "std_lib_facilities_4.h"
 #include "Graphics/GUI.h"
 #include "Place_Info.h"
+#include "Driver.h"
 
 using namespace Graph_lib;
 
 struct Print_Drivers : Graph_lib::Window{
 public:
-    Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place);
+    Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place, vector<drivers> drive);
 private:
     In_box distance_box;
     In_box tag_box;
@@ -18,6 +19,7 @@ private:
     string tag();
     
     vector<Place_Info> places;
+    vector<drivers> driver;
     
     void exit();
     void next();

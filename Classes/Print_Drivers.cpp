@@ -3,14 +3,15 @@
 #include "Print_Drivers.h"
 #include "Error_Window.h"
 
-Print_Drivers::Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place):
+Print_Drivers::Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place, vector<drivers> drive):
 
 Window(xy,w,h,title),
 distance_box(Point(x_max()/2-100,100),70,20,"Distance"),
 tag_box(Point(x_max()/2+100,100),70,20,"Tag"),
 exit_button(Point(0,0),70,20,"Exit",cb_exit),
 next_button(Point(x_max()-70,0),70,20,"Next",cb_next),
-places(place)
+places(place),
+driver(drive)
 {
     attach(distance_box);
     attach(tag_box);
