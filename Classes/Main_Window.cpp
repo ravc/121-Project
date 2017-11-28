@@ -50,6 +50,9 @@ displayMenu(Point(400,0),100,20,Menu::vertical,"Display")
     
 }
 
+void Main_Window::show_main_window(){
+    show();
+}
 void Main_Window::quit(){
     hide();
 }
@@ -154,13 +157,15 @@ void Main_Window::cb_requestRide(Address, Address pw) {
 }
 
 int Main_Window::displayCustomers() {
-    while(True){
+    hide();
+    while(true){
         Print_Customer win(Point(100,100),600,400,"My Ride");
         return gui_main();
     }
 }
 void Main_Window::cb_displayCustomers(Address, Address pw) {
     reference_to<Main_Window>(pw).displayCustomers();
+    reference_to<Main_Window>(pw).show_main_window();
 }
 
 int Main_Window::displayDrivers() {

@@ -20,6 +20,8 @@ private:
     Menu rideMenu;
     Menu displayMenu;
     
+    void show_main_window();
+    
     void quit();
     static void cb_quit(Address, Address);
 
