@@ -20,10 +20,8 @@ places(place)
 
 int Print_Drivers::distance(){
     string d = distance_box.get_string();
-    try{
-        double dis = atof(d.c_str());
-        return dis;
-    }catch(...){
+    double dis = atof(d.c_str());
+    if(dis >= 0){return dis;}else{
         while(true){
             Error_Window win(Point(200,200),300,200,"Not a valid distance");
             return gui_main();

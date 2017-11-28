@@ -6,7 +6,7 @@ Error_Window::Error_Window(Point xy, int w, int h, const string& error):
 
 Window(xy,w,h,"Error"),
 ok_button(Point(x_max()/2-35,y_max()/2+20),70,20,"OK",cb_ok),
-err(Point(x_max()/2-50,y_max()/2),100,20,"Error")
+err(Point(0,y_max()/2),x_max(),20,"Error")
 {
     attach(ok_button);
     attach(err);
