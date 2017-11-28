@@ -21,4 +21,4 @@ main file
 
 
 USE THIS TO COMPILE
-g++ -std=c++17 *cpp Classes/*cpp Classes/Graphics/*cpp -lfltk -lfltk_images
+g++ -std=c++17 *cpp Classes/*cpp Classes/Graphics/*cpp -lfltk -lfltk_images -lfltk_jpeg

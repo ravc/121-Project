@@ -170,10 +170,10 @@ void Main_Window::cb_displayCustomers(Address, Address pw) {
 }
 
 int Main_Window::displayDrivers() {
-    vector<Place_Info> t;
+    vector<Place_Info> p;
     hide();
     while(true){
-        Print_Drivers win(Point(100,100),600,400,"My Ride",t);
+        Print_Drivers win(Point(100,100),600,400,"My Ride",p);
         return gui_main();
     }
 }
