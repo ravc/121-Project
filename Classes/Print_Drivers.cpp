@@ -1,6 +1,7 @@
 # ifndef Print_Drivers_H
 # define Print_Drivers_H
 #include "Print_Drivers.h"
+#include "Error_Window.h"
 
 Print_Drivers::Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place):
 
@@ -23,17 +24,22 @@ int Print_Drivers::distance(){
         double dis = atof(d.c_str());
         return dis;
     }catch(...){
-        //put error popup here
+        while(true){
+            Error_Window win(Point(200,200),300,200,"Not a valid distance");
+            return gui_main();
+        }
     }
 }
 string Print_Drivers::tag(){
     string t = tag_box.get_string();
+    return t;
 }
 void Print_Drivers::exit(){
     hide();
 }
 void Print_Drivers::next(){
-    //need to create the next screen. will depend on distance and tag
+    int dis = distance();
+    string t = tag();
 }
 
 void Print_Drivers::cb_exit(Address, Address pw){
