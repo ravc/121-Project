@@ -5,7 +5,7 @@
 #include "Driver.h"
 #include "Place_Info.h"
 #include <FL/Fl_JPEG_Image.H>
-#include <FL/Fl_Box.h>
+#include <FL/Fl_Box.H>
 
 using namespace Graph_lib;
 
