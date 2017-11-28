@@ -1,6 +1,7 @@
 #ifndef Print_Places_H
 #define Print_Places_H
 #include "Print_Places.h"
+#include "Display_Images.h"
 
 Print_Places::Print_Places(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
 
@@ -15,10 +16,13 @@ places(p)
     attach(tag_box);
 }
 
+void Print_Places::show_window(){
+    show();
+}
 void Print_Places::exit(){
     hide();
 }
-void Print_Places::next(){
+int Print_Places::next(){
     vector<Place_Info> match;
     string looking = tag();
     for(int i = 0; i < places.size(); i++){
@@ -28,6 +32,11 @@ void Print_Places::next(){
                 break;
             }
         }
+    }
+    hide();
+    while(true){
+        Display_Images win(Point(100,100),600,400,"My Ride",match);
+        return gui_main();
     }
 }
 string Print_Places::tag(){
@@ -39,6 +48,7 @@ void Print_Places::cb_exit(Address, Address pw){
 }
 void Print_Places::cb_next(Address, Address pw){
     reference_to<Print_Places>(pw).next();
+    reference_to<Print_Places>(pw).show_window();
 }
 
 #endif

@@ -21,15 +21,12 @@ private:
     vector<Fl_JPEG_Image*> images;
     vector<Fl_Box*> boxes;
     
-    Button back_button;
     Button exit_button;
     
     Fl_Box* image_box;
     Fl_JPEG_Image* image;
     
     void exit();
-    void back();
     
     static void cb_exit(Address, Address pw);
-    static void cb_back(Address, Address pw);\
 };

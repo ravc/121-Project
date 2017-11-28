@@ -5,12 +5,9 @@
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<customers>& c):
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
-back_button(Point(0,0), 70, 20, "back", cb_back),
 custs(c)
 {
     attach(exit_button);
-    attach(back_button);
-    back_button.hide();
     for(int i = 0; i < c.size(); i++){
         boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
     }
@@ -19,36 +16,31 @@ custs(c)
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
-back_button(Point(0,0), 70, 20, "back", cb_back),
 driver(d)
 {
     attach(exit_button);
-    attach(back_button);
-    back_button.hide();
+    for(int i = 0; i < d.size(); i++){
+        boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+    }
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
-back_button(Point(0,0), 70, 20, "back", cb_back),
 places(p)
 {
     attach(exit_button);
-    attach(back_button);
-    back_button.hide();
+    for(int i = 0; i < p.size(); i++){
+        boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+    }
 }
 
 void Display_Images::exit(){
     hide();
 }
-void Display_Images::back(){
-}
 
 void Display_Images::cb_exit(Address, Address pw){
     reference_to<Display_Images>(pw).exit();
-}
-void Display_Images::cb_back(Address, Address pw){
-    reference_to<Display_Images>(pw).back();
 }
 
 #endif

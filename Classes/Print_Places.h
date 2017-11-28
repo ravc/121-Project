@@ -15,8 +15,9 @@ private:
     
     vector<Place_Info> places;
     
+    void show_window();
     void exit();
-    void next();
+    int next();
     string tag();
     
     static void cb_exit(Address, Address pw);
