@@ -18,6 +18,8 @@ private:
     vector<customers> custs;
     vector<drivers> driver;
     vector<Place_Info> places;
+    vector<Fl_JPEG_Image*> images;
+    vector<Fl_Box*> boxes;
     
     Button back_button;
     Button exit_button;

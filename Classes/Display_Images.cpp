@@ -11,6 +11,9 @@ custs(c)
     attach(exit_button);
     attach(back_button);
     back_button.hide();
+    for(int i = 0; i < c.size(); i++){
+        boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+    }
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
