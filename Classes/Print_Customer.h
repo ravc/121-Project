@@ -1,12 +1,15 @@
 #include "std_lib_facilities_4.h"
 #include "Graphics/GUI.h"
+#include "Customer.h"
 
 using namespace Graph_lib;
 
 struct Print_Customer : Graph_lib::Window{
 public:
-    Print_Customer(Point xy, int w, int h, const string& title);
+    Print_Customer(Point xy, int w, int h, const string& title, vector<customers>& c);
 private:
+    vector<customers> custs;
+    
     Button back_button;
     Button exit_button;
     Button print_all_button;

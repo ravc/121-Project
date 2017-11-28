@@ -2,13 +2,14 @@
 # define Print_Customer_H
 #include "Print_Customer.h"
 
-Print_Customer::Print_Customer(Point xy, int w, int h, const string& title):
+Print_Customer::Print_Customer(Point xy, int w, int h, const string& title, vector<customers>& c):
 
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
 back_button(Point(0,0), 70, 20, "back", cb_back),
 print_all_button(Point((x_max()/2-200), 70), 100, 20, "Print All", cb_print_all),
-print_neg_button(Point((x_max()/2+100), 70), 100, 20, "Print Negative", cb_print_neg)
+print_neg_button(Point((x_max()/2+100), 70), 100, 20, "Print Negative", cb_print_neg),
+custs(c)
 {
     attach(exit_button);
     attach(back_button);
