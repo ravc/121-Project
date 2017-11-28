@@ -4,6 +4,7 @@
 #include "Print_Customer.h"
 #include "Print_Drivers.h"
 #include "Print_Places.h"
+#include "Place_Info.h"
 
 Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting up the window and buttons
 Window(xy,w,h,title),
@@ -169,9 +170,10 @@ void Main_Window::cb_displayCustomers(Address, Address pw) {
 }
 
 int Main_Window::displayDrivers() {
+    vector<Place_Info> t;
     hide();
     while(true){
-        Print_Drivers win(Point(100,100),600,400,"My Ride");
+        Print_Drivers win(Point(100,100),600,400,"My Ride",t);
         return gui_main();
     }
 }
