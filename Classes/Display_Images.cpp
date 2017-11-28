@@ -11,6 +11,10 @@ custs(c)
     for(int i = 0; i < c.size(); i++){
         boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
     }
+    for(int i = 0; i < boxes.size(); i++){
+        boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
+        boxes[i]->redraw();
+    }
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
@@ -22,6 +26,10 @@ driver(d)
     for(int i = 0; i < d.size(); i++){
         boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
     }
+    for(int i = 0; i < boxes.size(); i++){
+        boxes[i]->image(new Fl_JPEG_Image(d[i].image().c_str()));
+        boxes[i]->redraw();
+    }
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
@@ -32,6 +40,10 @@ places(p)
     attach(exit_button);
     for(int i = 0; i < p.size(); i++){
         boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+    }
+    for(int i = 0; i < boxes.size(); i++){
+        boxes[i]->image(new Fl_JPEG_Image(p[i].image().c_str()));
+        boxes[i]->redraw();
     }
 }
 

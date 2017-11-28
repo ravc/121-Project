@@ -17,3 +17,4 @@ Place_Info customers::getCurrentLocation() { return currentLocation; }
 void customers::makePayment(double payment) { accountBalance += payment; }
 string customers::getName() { return cname; }
 void customers::changeLocation(Place_Info loc) { currentLocation = loc; }
+string customers::image(){return image_name;}

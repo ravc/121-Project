@@ -15,13 +15,13 @@ public:
     string getAddress();
     vector<string> getTags();
     Geo_Loc getLocation();
-    
-    
+    string image();
 private:
     string placename;
     string address;
     vector<string> tags;
     Geo_Loc location;
+    string image_name;
 };
 
 #endif

@@ -13,10 +13,11 @@ public:
     void addMoney(double amount);
     string getName();
     void changeLocation(Geo_Loc loc);
+    string image();
 private:
     Geo_Loc currentLoc;
     double currentPaycheck;
     string drivername;
-    
+    string image_name;
 };
 #endif

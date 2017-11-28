@@ -14,4 +14,4 @@ string Place_Info::getName() { return name; }
 string Place_Info::getAddress() { return address; }
 vector<string> Place_Info::getTags() { return tags; }
 Geo_Loc Place_Info::getLocation() { return location; }
-
+string Place_Info::image(){return image_name;}

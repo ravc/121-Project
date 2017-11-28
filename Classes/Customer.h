@@ -15,10 +15,12 @@ public:
     void makePayment(double payment);
     string getName();
     void changeLocation(Place_Info loc);
+    string image();
 private:
     int accountNumber;
     double accountBalance;
     Place_Info currentLocation;
     string custname;
+    string image_name;
 };
 #endif
