@@ -183,9 +183,10 @@ void Main_Window::cb_displayDrivers(Address, Address pw) {
 }
 
 int Main_Window::displayPlaces() {
+    vector<Place_Info> p;
     hide();
     while(true){
-        Print_Places win(Point(100,100),600,400,"My Ride");
+        Print_Places win(Point(100,100),600,400,"My Ride",p);
         return gui_main();
     }
 }
