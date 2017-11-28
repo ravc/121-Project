@@ -169,6 +169,7 @@ void Main_Window::cb_displayCustomers(Address, Address pw) {
 }
 
 int Main_Window::displayDrivers() {
+    hide();
     while(true){
         Print_Drivers win(Point(100,100),600,400,"My Ride");
         return gui_main();
@@ -176,9 +177,11 @@ int Main_Window::displayDrivers() {
 }
 void Main_Window::cb_displayDrivers(Address, Address pw) {
     reference_to<Main_Window>(pw).displayDrivers();
+    reference_to<Main_Window>(pw).show_main_window();
 }
 
 int Main_Window::displayPlaces() {
+    hide();
     while(true){
         Print_Places win(Point(100,100),600,400,"My Ride");
         return gui_main();
@@ -186,6 +189,7 @@ int Main_Window::displayPlaces() {
 }
 void Main_Window::cb_displayPlaces(Address, Address pw) {
     reference_to<Main_Window>(pw).displayPlaces();
+    reference_to<Main_Window>(pw).show_main_window();
 }
 
 #endif
