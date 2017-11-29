@@ -9,7 +9,7 @@ custs(c)
 {
     attach(exit_button);
     for(int i = 0; i < c.size(); i++){
-        boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+        boxes.push_back(new Fl_Box((c.size()/x_max())+(i*100/c.size()), 30, 100/c.size(), 100/c.size()));
     }
     for(int i = 0; i < boxes.size(); i++){
         boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
@@ -24,7 +24,7 @@ driver(d)
 {
     attach(exit_button);
     for(int i = 0; i < d.size(); i++){
-        boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+        boxes.push_back(new Fl_Box((d.size()/x_max())+(i*100/d.size()), 30, 100/d.size(), 100/d.size()));
     }
     for(int i = 0; i < boxes.size(); i++){
         boxes[i]->image(new Fl_JPEG_Image(d[i].image().c_str()));
@@ -39,7 +39,7 @@ places(p)
 {
     attach(exit_button);
     for(int i = 0; i < p.size(); i++){
-        boxes.push_back(new Fl_Box(i*20/x_max(), 30, 100, 100));
+        boxes.push_back(new Fl_Box((p.size()/x_max())+(i*100/p.size()), 30, 100/p.size(), 100/p.size()));
     }
     for(int i = 0; i < boxes.size(); i++){
         boxes[i]->image(new Fl_JPEG_Image(p[i].image().c_str()));
