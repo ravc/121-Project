@@ -6,9 +6,12 @@
 #include "Customer.h"
 
 struct paymentWindow : Graph_lib::Window {
-	paymentWindow(Point xy, int w, int h, const string& title);
+	paymentWindow(Point xy, int w, int h, const string& title,vector<customers>inputCustomers,vector<Place_Info>inputPlaces,vector<drivers>inputDrivers);
 
 private:
+	vector<customers> listOfCustomers;
+	vector<drivers> listOfDrivers;
+	vector<Place_Info> listOfPlaces;
 	//MENU 1
 	//Variables to be shown for make payment screen
 	customers currCustomer=customers("",0,"");

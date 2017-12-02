@@ -4,7 +4,10 @@
 #include "AddMoney.h"
 #include <cmath>
 
-paymentWindow::paymentWindow(Point xy, int w, int h, const string& title) : Window(xy, w, h, title),
+paymentWindow::paymentWindow(Point xy, int w, int h, const string& title, vector<customers>inputCustomers, vector<Place_Info>inputPlaces, vector<drivers>inputDrivers) : Window(xy, w, h, title),
+listOfCustomers(inputCustomers),
+listOfDrivers(inputDrivers),
+listOfPlaces(inputPlaces),
 back_button(Point(0, 0), 70, 20, "Back", cb_back),
 quit_button(Point(x_max() - 70, 0), 70, 20, "Exit", cb_quit),
 proceed_button(Point(x_max() / 2 - 35, y_max() * 3 / 4), 70, 20, "Proceed", cb_proceed),

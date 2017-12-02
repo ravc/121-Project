@@ -4,7 +4,10 @@
 #include "makeTransaction.h"
 #include <cmath>
 
-rideWindow::rideWindow(Point xy, int w, int h, const string& title) : Window(xy, w, h, title),
+rideWindow::rideWindow(Point xy, int w, int h, const string& title, vector<customers>inputCustomers, vector<Place_Info>inputPlaces, vector<drivers>inputDrivers) : Window(xy, w, h, title),
+listOfCustomers(inputCustomers),
+listOfPlaces(inputPlaces),
+listOfDrivers(inputDrivers),
 back_button(Point(0, 0), 70, 20, "Back", cb_back),
 quit_button(Point(x_max() - 70, 0), 70, 20, "Exit", cb_quit),
 proceed_button(Point(x_max() / 2 - 35, 370), 70, 20, "Proceed", cb_proceed),
@@ -200,63 +203,3 @@ void rideWindow::cb_back(Address, Address pw) {
 	reference_to<rideWindow>(pw).back_pressed();
 }
 
-int main() {
-	cout << "Enter input file name: ";
-	string ifname;
-	cin >> ifname;
-	ifstream ist{ ifname };
-	if (!ist) error("Can't open input file ", ifname);
-	int n;
-	ist >> n;
-	for (int l = 0; l<n; l++){
-		string name;
-		double a;
-		double b;
-		double c;
-		string pic;
-		ist >> name >> a >> b >> c >> pic;
-		listOfDrivers.push_back(drivers(Geo_loc(b,c),name,a,pic));
-	}
-	ist>>n;
-	for (int i = 0; i<n; i++) {
-		string name;
-		double balance;
-		string picName;
-		ist >> name >> balance >> picName;
-		listOfCustomers.push_back(customers(name, balance,picName));
-	}
-	ist >> n;
-	for (int j=0;j<n;j++){
-		string a;
-		string b;
-		double c;
-		double d;
-		int m;
-		ist >> a >> b >> c >> d;
-		ist >> m;
-		string e;
-		vector<string> tags;
-		for(int k=0;k<m;k++){
-			ist >> e;
-			tags.push_back(e);
-		}
-		string pic;
-		ist >> pic;
-		listOfPlaces.push_back(Place_info(a,b,tags,Geo_loc(c,d),pic));
-	}
-	while (true) {
-		try {
-
-			rideWindow win1(Point(100, 200), 600, 400, "Currency Menu");
-			return gui_main();
-		}
-		catch (exception& e) {
-			cerr << "exception: " << e.what() << '\n';
-			break;
-		}
-		catch (...) {
-			cerr << "Some exception\n";
-			break;
-		}
-	}
-}
