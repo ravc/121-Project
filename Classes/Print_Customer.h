@@ -17,8 +17,9 @@ private:
     
     void exit();
     void back();
-    void print_all();
-    void print_neg();
+    int print_all();
+    int print_neg();
+    void show_all();
     
     static void cb_exit(Address, Address pw);
     static void cb_back(Address, Address pw);

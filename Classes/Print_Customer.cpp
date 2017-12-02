@@ -19,7 +19,7 @@ custs(c)
     back_button.hide();
 }
 
-void show_all(){
+void Print_Customer::show_all(){
     show();
 }
 void Print_Customer::exit(){
@@ -28,31 +28,31 @@ void Print_Customer::exit(){
 void Print_Customer::back(){
     print_all_button.show();
     print_neg_button.show();
-    back.hide()
+    back_button.hide();
 }
-void Print_Customer::print_all(){
+int Print_Customer::print_all(){
     back_button.show();
     print_all_button.hide();
     print_neg_button.hide();
     hide();
     while(true){
-        Display_Images win(Point(100,100),600,400,"My Ride",c);
+        Display_Images win(Point(100,100),600,400,"My Ride",custs);
         return gui_main();
     }
 }
-void Print_Customer::print_neg(){
+int Print_Customer::print_neg(){
     back_button.show();
     print_all_button.hide();
     print_neg_button.hide();
     hide();
     vector<customers> cu;
-    for(int i = 0; i < c.size(); i++){
-        if(c[i].getAccountBalance() < 0){
-            cu.push_back(c[i]);
+    for(int i = 0; i < custs.size(); i++){
+        if(custs[i].getAccountBalance() < 0){
+            cu.push_back(custs[i]);
         }
     }
     while(true){
-        Display_Images win(Point(100,100),600,400,"My Ride",c);
+        Display_Images win(Point(100,100),600,400,"My Ride",cu);
         return gui_main();
     }
 }
