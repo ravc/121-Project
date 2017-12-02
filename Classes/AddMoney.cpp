@@ -59,7 +59,6 @@ void paymentWindow::proceed_pressed() {
 	//2: proceed is pressed at the confirmation menu (menu 2);
 	if (menu == 2) {
 		currCustomer.makePayment(moneyAdded);
-		cout << currCustomer.getAccountBalance();
 		hide();
 	}
 	else
@@ -70,7 +69,6 @@ void paymentWindow::proceed_pressed() {
 		stringstream ss;
 		bool isCorrect = false;
 		for (int i = 0; i<listOfCustomers.size(); i++) {
-            cout << listOfCustomers[i].getName().c_str() << endl;
 			if (listOfCustomers[i].getName() == inputName) {
 				currCustomer = listOfCustomers[i];
 				isCorrect = true;
