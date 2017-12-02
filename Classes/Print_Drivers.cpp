@@ -5,7 +5,7 @@
 #include "Geo_Loc.h"
 #include "Display_Images.h"
 
-Print_Drivers::Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place, vector<drivers> drive):
+Print_Drivers::Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place, vector<drivers>& drive):
 
 Window(xy,w,h,title),
 distance_box(Point(x_max()/2-100,100),70,20,"Distance"),
@@ -50,22 +50,26 @@ int Print_Drivers::next(){
         for(int j = 0; j < places[i].getTags().size(); j++){
             if(places[i].getTags()[j] == t){
                 p.push_back(places[i]);
-                break;
             }
         }
     }
     for(int i = 0; i < driver.size(); i++){
         for(int j = 0; j < p.size(); j++){
+           cout << l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation()) << endl;
             if(l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation())<=dis){
                 d.push_back(driver[i]);
-                break;
             }
         }
     }
     hide();
     while(true){
-        Display_Images win(Point(100,100),600,400,"My Ride",d);
-        return gui_main();
+        if(d.size() == 0){
+            Error_Window win(Point(200,200),300,200,"No Drivers found");
+            return gui_main();
+        }else{
+            Display_Images win(Point(100,100),600,400,"My Ride",d);
+            return gui_main();
+        }
     }
 }
 

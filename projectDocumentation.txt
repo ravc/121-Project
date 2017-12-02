@@ -4,21 +4,36 @@ Dr. Welch December 4 2017
 
 The master file format is:
 First line(x): number of drivers
-next x lines: Drivername Drivermoney lon lat
+next x lines: Drivername Drivermoney lon lat photofilename
 Line after that (y): number of customers
-next y lines: Custoname Customoney
+next y lines: Custoname Customoney photofilename
 line after that (z): number of places
-next z lines: Planename Placeaddress lon lat numtags(n) tag1 tag2 ... tagn
+next z lines: Planename Placeaddress lon lat numtags(n) [tag1 tag2 ... tagn] photofilename
 
 We used Luke's Hw 5, and integrated it into our project.
 
 File structure:
-Seperate header files for each class (place,drivers,customers,images)
+Seperate header files for each class (place,drivers,customers,images,windows,etc)
 window/graphics files
 master file (all customer, driver and place info)
 main file 
 
+Important classes and functions, and their data members:
+Place_info: name, address, longitude, latitude, vector of tags, photo filename
+customers: name, money, photo filename
+drivers: name, money, longitude, latitude, photo filename
+window structures for adding & removoving all 3: callback functions for adding and removing (calls class constructors)
+window structure for displaying all 3: callback functions to display info with FLTK
+window structure for making payment: callback functions to transfer money from a customer to a driver
+window structure for requesting a ride: callback functions to request a ride. can be based on location or tags, and finds the nearestr driver.
 
+Project Division:
+Josh - add/remove windows for all custos, places, and drivers
+Luke - make payment and request ride windpows
+Ruben - display all info & images
+
+Changes to original design:
+Instead of 1 window of n tags, I made n windows of 1 tag
 
 USE THIS TO COMPILE
 g++ -std=c++17 *cpp Classes/*cpp Classes/Graphics/*cpp -lfltk -lfltk_images

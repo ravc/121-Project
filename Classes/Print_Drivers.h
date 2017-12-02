@@ -7,7 +7,7 @@ using namespace Graph_lib;
 
 struct Print_Drivers : Graph_lib::Window{
 public:
-    Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place, vector<drivers> drive);
+    Print_Drivers(Point xy, int w, int h, const string& title, vector<Place_Info>& place, vector<drivers>& drive);
 private:
     In_box distance_box;
     In_box tag_box;
