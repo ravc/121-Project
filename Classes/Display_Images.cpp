@@ -18,14 +18,6 @@ custs(c)
     attach(one_button);
     attach(two_button);
     attach(three_button);
-    
-    for(int i = 0; i < number; i++){
-        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
-    }
-    for(int i = 0; i < boxes.size(); i++){
-        boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
-        boxes[i]->redraw();
-    }
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
@@ -43,15 +35,7 @@ driver(d)
     attach(next_button);
     attach(one_button);
     attach(two_button);
-    
     attach(three_button);
-    for(int i = 0; i < d.size(); i++){
-        boxes.push_back(new Fl_Box((d.size()/x_max())+(i*100/d.size()), 30, 100/d.size(), 100/d.size()));
-    }
-    for(int i = 0; i < boxes.size(); i++){
-        boxes[i]->image(new Fl_JPEG_Image(d[i].image().c_str()));
-        boxes[i]->redraw();
-    }
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
@@ -70,14 +54,6 @@ places(p)
     attach(one_button);
     attach(two_button);
     attach(three_button);
-    
-    for(int i = 0; i < p.size(); i++){
-        boxes.push_back(new Fl_Box((p.size()/x_max())+(i*100/p.size()), 30, 100/p.size(), 100/p.size()));
-    }
-    for(int i = 0; i < boxes.size(); i++){
-        boxes[i]->image(new Fl_JPEG_Image(p[i].image().c_str()));
-        boxes[i]->redraw();
-    }
 }
 
 void Display_Images::exit(){
@@ -95,8 +71,35 @@ void Display_Images::three(){
     number = 3;
     next();
 }
-void Display_Images::next(){
-    
+void Display_Images::next(vector<customers>& c){
+    for(int i = 0; i < number; i++){
+        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
+        ++pos;
+    }
+    for(int i = pos-number; i < pos; i++){
+        boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
+        boxes[i]->redraw();
+    }
+}
+void Display_Images::next(vector<drivers>& d){
+    for(int i = 0; i < number; i++){
+        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
+        ++pos;
+    }
+    for(int i = pos-number; i < pos; i++){
+        boxes[i]->image(new Fl_JPEG_Image(d[i].image().c_str()));
+        boxes[i]->redraw();
+    }
+}
+void Display_Images::next(vector<Place_Info>& p){
+    for(int i = 0; i < number; i++){
+        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
+        ++pos;
+    }
+    for(int i = pos-number; i < pos; i++){
+        boxes[i]->image(new Fl_JPEG_Image(p[i].image().c_str()));
+        boxes[i]->redraw();
+    }
 }
 void Display_Images::prev(){
     

@@ -39,8 +39,12 @@ private:
     void one();
     void two();
     void three();
-    void next();
-    void prev();
+    void next(vector<customers>& c);
+    void next(vector<drivers>& d);
+    void next(vector<Place_Info>& p);
+    void prev(vector<customers>& c);
+    void prev(vector<drivers>& d);
+    void prev(vector<Place_Info>& p);
     
     static void cb_exit(Address, Address pw);
     static void cb_one(Address, Address pw);
