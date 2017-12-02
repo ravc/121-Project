@@ -22,7 +22,10 @@ private:
     vector<drivers> driver;
     
     void exit();
-    void next();
+    int next();
+    void show_window();
+    
+    Geo_Loc l;
     
     static void cb_exit(Address, Address pw);
     static void cb_next(Address, Address pw);
