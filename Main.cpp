@@ -4,10 +4,7 @@
 #include "Classes/Place_Info.h"
 #include "Classes/Geo_Loc.h"
 #include "Classes/Main_Window.h"
-#include "Classes/Customer.h"
-#include "Classes/Driver.h"
-#include "Classes/Place_Info.h"
-#include "Classes/Geo_Loc.h"
+
 ifstream& loadDrivers(ifstream& ist,vector<drivers>& listOfDrivers) {
 	int n;
 	double balance, lat, lon;
@@ -40,7 +37,7 @@ ifstream&  loadPlaces(ifstream& ist, vector<Place_Info>& listOfPlaces) {
 		double lat, lon;
 		int numTags;
 		ist >> name >> address >> lat >> lon >> numTags;
-		for (int j = 0; j < m; j++) {
+		for (int j = 0; j < numTags; j++) {
 			ist >> tag;
 			tags.push_back(tag);
 		}

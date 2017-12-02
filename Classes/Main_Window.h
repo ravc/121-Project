@@ -1,4 +1,7 @@
 #include "std_lib_facilities_4.h"
+#include "Place_Info.h"
+#include "Driver.h"
+#include "Customer.h"
 #include "Graphics/GUI.h"
 
 using namespace Graph_lib;
