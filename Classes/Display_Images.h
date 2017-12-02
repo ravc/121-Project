@@ -21,12 +21,31 @@ private:
     vector<Fl_JPEG_Image*> images;
     vector<Fl_Box*> boxes;
     
+    int number = 1;
+    int pos = 0;
+    
     Button exit_button;
+    Button one_button;
+    Button two_button;
+    Button three_button;
+    Button next_button;
+    Button prev_button;
     
     Fl_Box* image_box;
     Fl_JPEG_Image* image;
     
     void exit();
     
+    void one();
+    void two();
+    void three();
+    void next();
+    void prev();
+    
     static void cb_exit(Address, Address pw);
+    static void cb_one(Address, Address pw);
+    static void cb_two(Address, Address pw);
+    static void cb_three(Address, Address pw);
+    static void cb_next(Address, Address pw);
+    static void cb_prev(Address, Address pw);
 };
