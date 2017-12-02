@@ -4,7 +4,7 @@
 #include "Customer.h"
 #include "Place_Info.h"
 #include "Driver.h"
-#include "Geo_loc.h"
+#include "Geo_Loc.h"
 
 struct rideWindow : Graph_lib::Window {
 	rideWindow(Point xy, int w, int h, const string& title);

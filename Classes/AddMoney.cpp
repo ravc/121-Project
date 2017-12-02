@@ -1,6 +1,6 @@
 #include "std_lib_facilities_4.h"
-#include "Simple_window.h"
-#include "Graph.h"
+#include "Graphics/Simple_window.h"
+#include "Graphics/Graph.h"
 #include "AddMoney.h"
 #include <cmath>
 
