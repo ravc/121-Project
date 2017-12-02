@@ -6,7 +6,7 @@
 //It contains information about the driver such as user number, name, account balance and current location
 class drivers {
 public:
-    drivers(Geo_Loc location, string inputName, double balance);
+    drivers(Geo_Loc location, string inputName, double balance, string img);
 	drivers();
 	Geo_Loc getCurrentLocation();
     double getCurrentPaycheck();

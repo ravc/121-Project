@@ -9,7 +9,7 @@
 class Place_Info {
     
 public:
-    Place_Info(string inputName, string inputAddress, vector<string> inputTags, Geo_Loc inputLocation);
+    Place_Info(string inputName, string inputAddress, vector<string> inputTags, Geo_Loc inputLocation, string img);
 	Place_Info();
 	string getName();
     string getAddress();
