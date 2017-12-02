@@ -27,5 +27,13 @@ window structure for displaying all 3: callback functions to display info with F
 window structure for making payment: callback functions to transfer money from a customer to a driver
 window structure for requesting a ride: callback functions to request a ride. can be based on location or tags, and finds the nearestr driver.
 
+Project Division:
+Josh - add/remove windows for all custos, places, and drivers
+Luke - make payment and request ride windpows
+Ruben - display all info & images
+
+Changes to original design:
+Instead of 1 window of n tags, I made n windows of 1 tag
+
 USE THIS TO COMPILE
 g++ -std=c++17 *cpp Classes/*cpp Classes/Graphics/*cpp -lfltk -lfltk_images
