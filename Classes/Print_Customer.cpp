@@ -1,6 +1,7 @@
 # ifndef Print_Customer_H
 # define Print_Customer_H
 #include "Print_Customer.h"
+#include "Display_Images.h"
 
 Print_Customer::Print_Customer(Point xy, int w, int h, const string& title, vector<customers>& c):
 
@@ -18,22 +19,42 @@ custs(c)
     back_button.hide();
 }
 
+void show_all(){
+    show();
+}
 void Print_Customer::exit(){
     hide();
 }
 void Print_Customer::back(){
     print_all_button.show();
     print_neg_button.show();
+    back.hide()
 }
 void Print_Customer::print_all(){
     back_button.show();
     print_all_button.hide();
     print_neg_button.hide();
+    hide();
+    while(true){
+        Display_Images win(Point(100,100),600,400,"My Ride",c);
+        return gui_main();
+    }
 }
 void Print_Customer::print_neg(){
     back_button.show();
     print_all_button.hide();
     print_neg_button.hide();
+    hide();
+    vector<customers> cu;
+    for(int i = 0; i < c.size(); i++){
+        if(c[i].getAccountBalance() < 0){
+            cu.push_back(c[i]);
+        }
+    }
+    while(true){
+        Display_Images win(Point(100,100),600,400,"My Ride",c);
+        return gui_main();
+    }
 }
 
 void Print_Customer::cb_exit(Address, Address pw){
@@ -44,9 +65,11 @@ void Print_Customer::cb_back(Address, Address pw){
 }
 void Print_Customer::cb_print_all(Address, Address pw){
     reference_to<Print_Customer>(pw).print_all();
+    reference_to<Print_Customer>(pw).show_all();
 }
 void Print_Customer::cb_print_neg(Address, Address pw){
     reference_to<Print_Customer>(pw).print_neg();
+    reference_to<Print_Customer>(pw).show_all();
 }
 
 #endif
