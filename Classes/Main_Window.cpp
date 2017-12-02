@@ -163,10 +163,9 @@ void Main_Window::cb_requestRide(Address, Address pw) {
 }
 
 int Main_Window::displayCustomers() {
-    vector<customers> cust;
     hide();
     while(true){
-        Print_Customer win(Point(100,100),600,400,"My Ride",cust);
+        Print_Customer win(Point(100,100),600,400,"My Ride",listOfCustomers);
         return gui_main();
     }
 }
@@ -176,11 +175,9 @@ void Main_Window::cb_displayCustomers(Address, Address pw) {
 }
 
 int Main_Window::displayDrivers() {
-    vector<Place_Info> p;
-    vector<drivers> d;
     hide();
     while(true){
-        Print_Drivers win(Point(100,100),600,400,"My Ride",p,d);
+        Print_Drivers win(Point(100,100),600,400,"My Ride",listOfPlaces,listOfDrivers);
         return gui_main();
     }
 }
@@ -190,10 +187,9 @@ void Main_Window::cb_displayDrivers(Address, Address pw) {
 }
 
 int Main_Window::displayPlaces() {
-    vector<Place_Info> p;
     hide();
     while(true){
-        Print_Places win(Point(100,100),600,400,"My Ride",p);
+        Print_Places win(Point(100,100),600,400,"My Ride",listOfPlaces);
         return gui_main();
     }
 }

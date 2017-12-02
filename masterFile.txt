@@ -1,14 +1,14 @@
 3
-Jeff_Gordon 6708.62 40.7823 -73.9654
-Alain_Prost 100 30.2769 -97.7475
-Trey 23.45 34 54
+Jeff_Gordon 6708.62 40.7823 -73.9654 ~/Pictures/networking.jpg
+Alain_Prost 100 30.2769 -97.7475 ~/Pictures/networking.jpg
+Trey 23.45 34 54 ~/Pictures/networking.jpg
 5
-Hughey -5973.48
-Dewey 10
-Louie 20
-Nic 681.24
-John 45
+Hughey -5973.48 ~/Pictures/networking.jpg
+Dewey 10 ~/Pictures/networking.jpg
+Louie 20 ~/Pictures/networking.jpg
+Nic 681.24 ~/Pictures/networking.jpg
+John 45 ~/Pictures/networking.jpg
 3
-CLL College_Station 30.5885 -96.3639 2 airport car_rental
-Central_Park New_York 40.7823 -73.9654 3 park playground restaurant
-Library library_street 23 32 3 Books kids study
+CLL College_Station 30.5885 -96.3639 2 airport car_rental ~/Pictures/networking.jpg
+Central_Park New_York 40.7823 -73.9654 3 park playground restaurant ~/Pictures/networking.jpg
+Library library_street 23 32 3 Books kids study ~/Pictures/networking.jpg

@@ -21,6 +21,8 @@ custs(c)
 
 void Print_Customer::show_all(){
     show();
+    print_all_button.show();
+    print_neg_button.show();
 }
 void Print_Customer::exit(){
     hide();
