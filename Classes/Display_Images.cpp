@@ -14,7 +14,7 @@ custs(c)
 {
     attach(exit_button);
     for(int i = 0; i < number; i++){
-        boxes.push_back(new Fl_Box(50*i, 30, 50, 50);
+        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
     }
     for(int i = 0; i < boxes.size(); i++){
         boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
@@ -25,6 +25,11 @@ custs(c)
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
+prev_button(Point(x_max()/2-70,y_max()-20),70,20,"<<",cb_prev),
+next_button(Point(x_max()/2,y_max()-20),70,20,">>",cb_next),
+one_button(Point(x_max()/2-105,y_max()-60),70,20,"1",cb_one),
+two_button(Point(x_max()/2-35,y_max()-60),70,20,"2",cb_two),
+three_button(Point(x_max()/2+35,y_max()-60),70,20,"3",cb_three),
 driver(d)
 {
     attach(exit_button);
@@ -40,6 +45,11 @@ driver(d)
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
 Window(xy,w,h,title),
 exit_button(Point(x_max()-70,0), 70, 20, "exit", cb_exit),
+prev_button(Point(x_max()/2-70,y_max()-20),70,20,"<<",cb_prev),
+next_button(Point(x_max()/2,y_max()-20),70,20,">>",cb_next),
+one_button(Point(x_max()/2-105,y_max()-60),70,20,"1",cb_one),
+two_button(Point(x_max()/2-35,y_max()-60),70,20,"2",cb_two),
+three_button(Point(x_max()/2+35,y_max()-60),70,20,"3",cb_three),
 places(p)
 {
     attach(exit_button);
@@ -65,13 +75,7 @@ void Display_Images::three(){
     number = 3;
 }
 void Display_Images::next(){
-    for(int i = 0; i < number; i++){
-        boxes.push_back(new Fl_Box(50*i, 30, 50, 50);
-    }
-    for(int i = pos; i < boxes.size(); i++){
-        boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
-        boxes[i]->redraw();
-    }
+
 }
 void Display_Images::prev(){}
 

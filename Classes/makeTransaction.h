@@ -11,11 +11,11 @@ struct rideWindow : Graph_lib::Window {
 
 private:
 	customers current=listOfCustomers[0];
-	Place_info st=listOfPlaces[0];
+	Place_Info st=listOfPlaces[0];
 	drivers dr=listOfDrivers[0];
-	vector<Place_info> options;
+	vector<Place_Info> options;
 	double minDistance=1000000;
-	Place_info fin=listOfPlaces[0];
+	Place_Info fin=listOfPlaces[0];
 	
 	int menu;
 	//MENU 1

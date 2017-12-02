@@ -7,8 +7,8 @@ double accountBalance;
 int accountNumber = 0;
 Place_Info currentLocation;
 
-customers::customers(string inputName, double inputAccountbalance) :
-    custname(inputName), accountBalance(inputAccountbalance), currentLocation(Place_Info("", "", emptyKeys, Geo_Loc(0, 0))) {}
+customers::customers(string inputName, double inputAccountbalance, string img) :
+    custname(inputName), accountBalance(inputAccountbalance), image_name(img), currentLocation(Place_Info("", "", emptyKeys, Geo_Loc(0, 0),"")) {}
 customers::customers() {}
 int customers::getAccountNumber() { return accountNumber; }
 double customers::getAccountBalance() { return accountBalance; }

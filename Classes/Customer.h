@@ -6,7 +6,7 @@
 //It contains the currentLocation of the customer as well as their amount owed and name
 class customers {
 public:
-    customers(string inputName, double inputAccountbalance);
+    customers(string inputName, double inputAccountbalance, string img);
 	customers();
     int getAccountNumber();
     double getAccountBalance();

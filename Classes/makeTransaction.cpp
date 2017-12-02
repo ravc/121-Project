@@ -215,7 +215,7 @@ int main() {
 		double c;
 		string pic;
 		ist >> name >> a >> b >> c >> pic;
-		listOfDrivers.push_back(drivers(Geo_loc(b,c),name,a,pic));
+		listOfDrivers.push_back(drivers(Geo_Loc(b,c),name,a,pic));
 	}
 	ist>>n;
 	for (int i = 0; i<n; i++) {
@@ -242,7 +242,7 @@ int main() {
 		}
 		string pic;
 		ist >> pic;
-		listOfPlaces.push_back(Place_info(a,b,tags,Geo_loc(c,d),pic));
+		listOfPlaces.push_back(Place_Info(a,b,tags,Geo_Loc(c,d),pic));
 	}
 	while (true) {
 		try {
