@@ -6,7 +6,7 @@
 #include "Customer.h"
 
 struct paymentWindow : Graph_lib::Window {
-	paymentWindow(Point xy, int w, int h, const string& title,vector<customers>inputCustomers,vector<Place_Info>inputPlaces,vector<drivers>inputDrivers);
+	paymentWindow(Point xy, int w, int h, const string& title,vector<customers>& inputCustomers,vector<Place_Info>& inputPlaces,vector<drivers>& inputDrivers);
 
 private:
 	vector<customers> listOfCustomers;

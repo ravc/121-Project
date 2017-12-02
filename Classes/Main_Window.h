@@ -64,7 +64,7 @@ private:
     void removePlace();
     static void cb_removePlace(Address, Address pw);
     
-    void payBalance();
+    int payBalance();
     static void cb_payBalance(Address, Address pw);
     
     void requestRide();

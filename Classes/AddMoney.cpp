@@ -4,7 +4,7 @@
 #include "AddMoney.h"
 #include <cmath>
 
-paymentWindow::paymentWindow(Point xy, int w, int h, const string& title, vector<customers>inputCustomers, vector<Place_Info>inputPlaces, vector<drivers>inputDrivers) : Window(xy, w, h, title),
+paymentWindow::paymentWindow(Point xy, int w, int h, const string& title, vector<customers>& inputCustomers, vector<Place_Info>& inputPlaces, vector<drivers>& inputDrivers) : Window(xy, w, h, title),
 listOfCustomers(inputCustomers),
 listOfDrivers(inputDrivers),
 listOfPlaces(inputPlaces),

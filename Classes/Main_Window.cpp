@@ -7,6 +7,8 @@
 #include "Place_Info.h"
 #include "Driver.h"
 #include "Customer.h"
+#include "AddMoney.h"
+#include "makeTransaction.h"
 
 Main_Window::Main_Window(Point xy, int w, int h, const string& title, vector<customers>& inputCustomers, vector<drivers>& inputDrivers, vector<Place_Info>& inputPlaces) : //setting up the window and buttons
 Window(xy, w, h, title),
@@ -148,8 +150,12 @@ void Main_Window::cb_removePlace(Address, Address pw) {
     reference_to<Main_Window>(pw).removePlace();
 }
 
-void Main_Window::payBalance() {
-    
+int Main_Window::payBalance() {
+	hide();
+	while (true) {
+		paymentWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
+		return gui_main();
+	}
 }
 void Main_Window::cb_payBalance(Address, Address pw) {
     reference_to<Main_Window>(pw).payBalance();
