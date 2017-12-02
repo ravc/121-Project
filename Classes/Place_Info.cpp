@@ -10,7 +10,7 @@ Geo_Loc location;
 Place_Info::Place_Info() {}
 Place_Info::Place_Info(string inputName, string inputAddress, vector<string> inputTags, Geo_Loc inputLocation, string img) :
 placename(inputName), address(inputAddress), tags(inputTags), location(inputLocation), image_name(img) {}
-string Place_Info::getName() { return name; }
+string Place_Info::getName() { return placename; }
 string Place_Info::getAddress() { return address; }
 vector<string> Place_Info::getTags() { return tags; }
 Geo_Loc Place_Info::getLocation() { return location; }

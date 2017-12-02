@@ -74,12 +74,13 @@ void Display_Images::three(){
 void Display_Images::next(){
     if(custs.size() > 0){
         try{
-//             for(int i = 0; i < number; i++){
-//                 img = new Image(Point(50*i,30),custs[pos].image());
-//                 img->resize(100,200);
-//                 attach(*img);
-//                 ++pos;
-//             }
+            //for(int i = 0; i < number; i++){
+            cout << custs[pos].image();
+                Image* img = new Image(Point(50,30),custs[pos].image());
+                img->resize(100,200);
+                attach(*img);
+                ++pos;
+            //}
 //             for(int i = pos-number; i < pos; i++){
 //                 boxes[i]->image(new Fl_JPEG_Image(custs[i].image().c_str()));
 //                 boxes[i]->redraw();
