@@ -18,6 +18,12 @@ custs(c)
     attach(one_button);
     attach(two_button);
     attach(three_button);
+    for(int i = 0; i < custs.size(); i++){
+        images.push_back(new Image(Point(150*i,50),custs[i].image()));
+        images[i]->resize(100,100);
+    }
+    attach(*images[0]);
+    
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
@@ -36,6 +42,11 @@ driver(d)
     attach(one_button);
     attach(two_button);
     attach(three_button);
+    for(int i = 0; i < driver.size(); i++){
+        images.push_back(new Image(Point(150*i,50),driver[i].image()));
+        images[i]->resize(100,100);
+    }
+    attach(*images[0]);
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
@@ -54,6 +65,11 @@ places(p)
     attach(one_button);
     attach(two_button);
     attach(three_button);
+    for(int i = 0; i < places.size(); i++){
+        images.push_back(new Image(Point(150*i,50),places[i].image()));
+        images[i]->resize(100,100);
+    }
+    attach(*images[0]);
 }
 
 void Display_Images::exit(){
@@ -72,43 +88,7 @@ void Display_Images::three(){
     next();
 }
 void Display_Images::next(){
-    if(custs.size() > 0){
-        try{
-            //for(int i = 0; i < number; i++){
-            cout << custs[pos].image();
-                Image* img = new Image(Point(50,30),custs[pos].image());
-                img->resize(100,200);
-                attach(*img);
-                ++pos;
-            //}
-//             for(int i = pos-number; i < pos; i++){
-//                 boxes[i]->image(new Fl_JPEG_Image(custs[i].image().c_str()));
-//                 boxes[i]->redraw();
-//             }
-        }catch(...){}
-    }else if(driver.size() > 0){
-        try{
-            for(int i = 0; i < number; i++){
-                boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
-                ++pos;
-            }
-            for(int i = pos-number; i < pos; i++){
-                boxes[i]->image(new Fl_JPEG_Image(driver[i].image().c_str()));
-                boxes[i]->redraw();
-            }
-        }catch(...){}
-    }else if(places.size() > 0){
-        try{
-            for(int i = 0; i < number; i++){
-                boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
-                ++pos;
-            }
-            for(int i = pos-number; i < pos; i++){
-                boxes[i]->image(new Fl_JPEG_Image(places[i].image().c_str()));
-                boxes[i]->redraw();
-            }
-        }catch(...){}
-    }
+    
 }
 void Display_Images::prev(){}
 
