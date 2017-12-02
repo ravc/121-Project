@@ -1,13 +1,19 @@
 #include "std_lib_facilities_4.h"
+#include "Place_Info.h"
+#include "Driver.h"
+#include "Customer.h"
 #include "Graphics/GUI.h"
 
 using namespace Graph_lib;
 
 struct Main_Window : Graph_lib::Window{
 public:
-    Main_Window(Point xy, int w, int h, const string& title);
+    Main_Window(Point xy, int w, int h, const string& title,vector<customers>& inputCustomers, vector<drivers>& inputDrivers, vector<Place_Info>& inputPlaces);
     
 private:
+	vector<customers> listOfCustomers;
+	vector<drivers> listOfDrivers;
+	vector<Place_Info> listOfPlaces;
     Button quit_button;
     Button cust_menu_button;
     Button driver_menu_button;
