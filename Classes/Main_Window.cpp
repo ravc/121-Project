@@ -8,8 +8,11 @@
 #include "Driver.h"
 #include "Customer.h"
 
-Main_Window::Main_Window(Point xy, int w, int h, const string& title): //setting up the window and buttons
-Window(xy,w,h,title),
+Main_Window::Main_Window(Point xy, int w, int h, const string& title, vector<customers>& inputCustomers, vector<drivers>& inputDrivers, vector<Place_Info>& inputPlaces) : //setting up the window and buttons
+Window(xy, w, h, title),
+listOfCustomers(inputCustomers),
+listOfDrivers(inputDrivers),
+listOfPlaces(inputPlaces),
 quit_button(Point(x_max()-70,0), 70, 20, "Quit", cb_quit),
 cust_menu_button(Point(0,0),100,20,"Customer Menu",cb_custMenuButton),
 customerMenu(Point(0,0),100,20,Menu::vertical,"Customer Menu"),
