@@ -23,6 +23,7 @@ void Print_Customer::show_all(){
     show();
     print_all_button.show();
     print_neg_button.show();
+    back_button.hide();
 }
 void Print_Customer::exit(){
     hide();
