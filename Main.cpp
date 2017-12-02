@@ -49,8 +49,8 @@ int main(){
     vector<customers> listOfCustomers;
     vector<drivers> listOfDrivers;
     vector<Place_Info> listOfPlaces;
-    ifstream ist{ "masterFile.txt" };
-    //if (!ist) error("Can't open input file ", ifname);
+    ifstream ist{ "t.txt" };
+    if (!ist) error("Can't open input file ");
     loadDrivers(ist, listOfDrivers);
     loadCustomers(ist, listOfCustomers);
     loadPlaces(ist, listOfPlaces);
