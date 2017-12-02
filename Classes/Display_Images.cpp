@@ -71,39 +71,37 @@ void Display_Images::three(){
     number = 3;
     next();
 }
-void Display_Images::next(vector<customers>& c){
-    for(int i = 0; i < number; i++){
-        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
-        ++pos;
-    }
-    for(int i = pos-number; i < pos; i++){
-        boxes[i]->image(new Fl_JPEG_Image(c[i].image().c_str()));
-        boxes[i]->redraw();
+void Display_Images::next(){
+    if(custs.size() > 0){
+        for(int i = 0; i < number; i++){
+            boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
+            ++pos;
+        }
+        for(int i = pos-number; i < pos; i++){
+            boxes[i]->image(new Fl_JPEG_Image(custs[i].image().c_str()));
+            boxes[i]->redraw();
+        }
+    }else if(driver.size() > 0){
+        for(int i = 0; i < number; i++){
+            boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
+            ++pos;
+        }
+        for(int i = pos-number; i < pos; i++){
+            boxes[i]->image(new Fl_JPEG_Image(driver[i].image().c_str()));
+            boxes[i]->redraw();
+        }
+    }else if(places.size() > 0){
+        for(int i = 0; i < number; i++){
+            boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
+            ++pos;
+        }
+        for(int i = pos-number; i < pos; i++){
+            boxes[i]->image(new Fl_JPEG_Image(places[i].image().c_str()));
+            boxes[i]->redraw();
+        }
     }
 }
-void Display_Images::next(vector<drivers>& d){
-    for(int i = 0; i < number; i++){
-        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
-        ++pos;
-    }
-    for(int i = pos-number; i < pos; i++){
-        boxes[i]->image(new Fl_JPEG_Image(d[i].image().c_str()));
-        boxes[i]->redraw();
-    }
-}
-void Display_Images::next(vector<Place_Info>& p){
-    for(int i = 0; i < number; i++){
-        boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
-        ++pos;
-    }
-    for(int i = pos-number; i < pos; i++){
-        boxes[i]->image(new Fl_JPEG_Image(p[i].image().c_str()));
-        boxes[i]->redraw();
-    }
-}
-void Display_Images::prev(){
-    
-}
+void Display_Images::prev(){}
 
 void Display_Images::cb_exit(Address, Address pw){
     reference_to<Display_Images>(pw).exit();
