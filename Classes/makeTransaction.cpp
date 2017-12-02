@@ -161,10 +161,10 @@ void rideWindow::proceed_pressed() {
 				}
 			}
 			//Set all of the images for the next step
-			customerPic = new Image(Point(40, 100), current.getPicture());
-			driverPic = new Image(Point(180, 100), dr.getPicture());
-			startPic = new Image(Point(320, 100), st.getPicture());
-			finalPic = new Image(Point(460, 100), fin.getPicture());
+			customerPic = new Image(Point(40, 100), current.image());
+			driverPic = new Image(Point(180, 100), dr.image());
+			startPic = new Image(Point(320, 100), st.image());
+			finalPic = new Image(Point(460, 100), fin.image());
 
 			customerPic->resize(100, 200);
 			startPic->resize(100, 200);
@@ -203,66 +203,3 @@ void rideWindow::cb_back(Address, Address pw) {
 	reference_to<rideWindow>(pw).back_pressed();
 }
 
-<<<<<<< HEAD
-=======
-int main() {
-	cout << "Enter input file name: ";
-	string ifname;
-	cin >> ifname;
-	ifstream ist{ ifname };
-	if (!ist) error("Can't open input file ", ifname);
-	int n;
-	ist >> n;
-	for (int l = 0; l<n; l++){
-		string name;
-		double a;
-		double b;
-		double c;
-		string pic;
-		ist >> name >> a >> b >> c >> pic;
-		listOfDrivers.push_back(drivers(Geo_Loc(b,c),name,a,pic));
-	}
-	ist>>n;
-	for (int i = 0; i<n; i++) {
-		string name;
-		double balance;
-		string picName;
-		ist >> name >> balance >> picName;
-		listOfCustomers.push_back(customers(name, balance,picName));
-	}
-	ist >> n;
-	for (int j=0;j<n;j++){
-		string a;
-		string b;
-		double c;
-		double d;
-		int m;
-		ist >> a >> b >> c >> d;
-		ist >> m;
-		string e;
-		vector<string> tags;
-		for(int k=0;k<m;k++){
-			ist >> e;
-			tags.push_back(e);
-		}
-		string pic;
-		ist >> pic;
-		listOfPlaces.push_back(Place_Info(a,b,tags,Geo_Loc(c,d),pic));
-	}
-	while (true) {
-		try {
-
-			rideWindow win1(Point(100, 200), 600, 400, "Currency Menu");
-			return gui_main();
-		}
-		catch (exception& e) {
-			cerr << "exception: " << e.what() << '\n';
-			break;
-		}
-		catch (...) {
-			cerr << "Some exception\n";
-			break;
-		}
-	}
-}
->>>>>>> ef66ebd8641947f5c4f7c1737cdacea38a524639
