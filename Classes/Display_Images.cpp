@@ -13,6 +13,12 @@ three_button(Point(x_max()/2+35,y_max()-60),70,20,"3",cb_three),
 custs(c)
 {
     attach(exit_button);
+    attach(prev_button);
+    attach(next_button);
+    attach(one_button);
+    attach(two_button);
+    attach(three_button);
+    
     for(int i = 0; i < number; i++){
         boxes.push_back(new Fl_Box(50*i, 30, 50, 50));
     }
@@ -33,6 +39,12 @@ three_button(Point(x_max()/2+35,y_max()-60),70,20,"3",cb_three),
 driver(d)
 {
     attach(exit_button);
+    attach(prev_button);
+    attach(next_button);
+    attach(one_button);
+    attach(two_button);
+    
+    attach(three_button);
     for(int i = 0; i < d.size(); i++){
         boxes.push_back(new Fl_Box((d.size()/x_max())+(i*100/d.size()), 30, 100/d.size(), 100/d.size()));
     }
@@ -53,6 +65,12 @@ three_button(Point(x_max()/2+35,y_max()-60),70,20,"3",cb_three),
 places(p)
 {
     attach(exit_button);
+    attach(prev_button);
+    attach(next_button);
+    attach(one_button);
+    attach(two_button);
+    attach(three_button);
+    
     for(int i = 0; i < p.size(); i++){
         boxes.push_back(new Fl_Box((p.size()/x_max())+(i*100/p.size()), 30, 100/p.size(), 100/p.size()));
     }
@@ -67,17 +85,22 @@ void Display_Images::exit(){
 }
 void Display_Images::one(){
     number = 1;
+    next();
 }
 void Display_Images::two(){
     number = 2;
+    next();
 }
 void Display_Images::three(){
     number = 3;
+    next();
 }
 void Display_Images::next(){
-
+    
 }
-void Display_Images::prev(){}
+void Display_Images::prev(){
+    
+}
 
 void Display_Images::cb_exit(Address, Address pw){
     reference_to<Display_Images>(pw).exit();
