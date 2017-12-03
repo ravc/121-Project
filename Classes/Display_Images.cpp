@@ -143,11 +143,13 @@ void Display_Images::three(){
 }
 
 void Display_Images::next(){//removes the old picture and adds the new ones
-    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
-    for(int i = 0; i < images.size(); i++){detach(*images[i]);}
+    if(pos != images.size()){
+        for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
+        for(int i = 0; i < images.size(); i++){detach(*images[i]);}
+    }else{return;}
     try{
         for(int i = 0; i < number; i++){
-            try{detach(*images[pos-i]);}catch(...){}
+            //try{detach(*images[pos-i]);}catch(...){}
             try{images[pos+i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
             try{attach(*images[pos+i]);}catch(...){}
         }
@@ -168,11 +170,13 @@ void Display_Images::next(){//removes the old picture and adds the new ones
     }catch(...){}
 }
 void Display_Images::prev(){//same as next but in reverse
-    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
-    for(int i = 0; i < images.size(); i++){detach(*images[i]);}
+    if(pos != 0){
+        for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
+        for(int i = 0; i < images.size(); i++){detach(*images[i]);}
+    }else{return;}
     try{
         for(int i = 0; i < number; i++){
-            try{detach(*images[pos+i]);}catch(...){}
+            //try{detach(*images[pos+i]);}catch(...){}
             try{images[pos-i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
             try{attach(*images[pos-i]);}catch(...){}
         }
