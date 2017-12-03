@@ -17,16 +17,16 @@ listOfCustomers(inputCustomers),
 listOfDrivers(inputDrivers),
 listOfPlaces(inputPlaces),
 quit_button(Point(x_max()-70,0), 70, 20, "Quit", cb_quit),
-cust_menu_button(Point(0,20),140,20,"Customer Menu",cb_custMenuButton),
-customerMenu(Point(0,20),140,20,Menu::vertical,"Customer Menu"),
-driver_menu_button(Point(150, 20), 100, 20, "Driver Menu",cb_driverMenuButton),
-driverMenu(Point(150,20),100,20,Menu::vertical,"Driver Menu"),
-place_menu_button(Point(260, 20), 100, 20, "Place Menu",cb_placeMenuButton),
-placeMenu(Point(260,20),100,20,Menu::vertical,"Place Menu"),
-ride_menu_button(Point(370, 20), 100, 20, "Ride Menu",cb_rideMenuButton),
-rideMenu(Point(370,20),100,20,Menu::vertical,"Ride Menu"),
-display_menu_button(Point(480, 20), 100, 20, "Display Menu",cb_displayMenuButton),
-displayMenu(Point(480,20),100,20,Menu::vertical,"Display")
+cust_menu_button(Point(10,20),140,20,"Customer Menu",cb_custMenuButton),
+customerMenu(Point(10,20),140,20,Menu::vertical,"Customer Menu"),
+driver_menu_button(Point(160, 20), 100, 20, "Driver Menu",cb_driverMenuButton),
+driverMenu(Point(160,20),100,20,Menu::vertical,"Driver Menu"),
+place_menu_button(Point(270, 20), 100, 20, "Place Menu",cb_placeMenuButton),
+placeMenu(Point(270,20),100,20,Menu::vertical,"Place Menu"),
+ride_menu_button(Point(380, 20), 100, 20, "Ride Menu",cb_rideMenuButton),
+rideMenu(Point(380,20),100,20,Menu::vertical,"Ride Menu"),
+display_menu_button(Point(490, 20), 100, 20, "Display Menu",cb_displayMenuButton),
+displayMenu(Point(490,20),100,20,Menu::vertical,"Display")
 {
     customerMenu.attach(new Button(Point(0, 0), 0, 0, "Add Customer",cb_addCustomer));
     customerMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Customer", cb_removeCustomer));
@@ -36,9 +36,9 @@ displayMenu(Point(480,20),100,20,Menu::vertical,"Display")
     placeMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Place", cb_removePlace));
     rideMenu.attach(new Button(Point(0, 0), 0, 0, "Pay Balance", cb_payBalance));
     rideMenu.attach(new Button(Point(0, 0), 0, 0, "Request Ride", cb_requestRide));
-    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Customers", cb_displayCustomers));
-    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Drivers", cb_displayDrivers));
-    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Places", cb_displayPlaces));
+    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Customers", cb_displayCustomers));
+    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Drivers", cb_displayDrivers));
+    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Places", cb_displayPlaces));
     attach(quit_button);
     attach(cust_menu_button);
     attach(driver_menu_button);
