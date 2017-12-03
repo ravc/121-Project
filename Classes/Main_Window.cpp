@@ -159,13 +159,19 @@ int Main_Window::payBalance() {
 }
 void Main_Window::cb_payBalance(Address, Address pw) {
     reference_to<Main_Window>(pw).payBalance();
+	reference_to<Main_Window>(pw).show_main_window();
 }
 
-void Main_Window::requestRide() {
-    
+int Main_Window::requestRide() {
+	hide();
+	while (true) {
+		rideWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
+		return gui_main();
+	}
 }
 void Main_Window::cb_requestRide(Address, Address pw) {
     reference_to<Main_Window>(pw).requestRide();
+	reference_to<Main_Window>(pw).show_main_window();
 }
 
 int Main_Window::displayCustomers() {

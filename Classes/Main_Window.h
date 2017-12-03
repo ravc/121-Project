@@ -67,7 +67,7 @@ private:
     int payBalance();
     static void cb_payBalance(Address, Address pw);
     
-    void requestRide();
+    int requestRide();
     static void cb_requestRide(Address, Address pw);
     
     int displayCustomers();

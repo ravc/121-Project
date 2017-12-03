@@ -59,7 +59,6 @@ void paymentWindow::proceed_pressed() {
 	//2: proceed is pressed at the confirmation menu (menu 2);
 	if (menu == 2) {
 		currCustomer.makePayment(moneyAdded);
-		cout << currCustomer.getAccountBalance();
 		hide();
 	}
 	else
