@@ -143,7 +143,8 @@ void Display_Images::three(){
 }
 
 void Display_Images::next(){//removes the old picture and adds the new ones
-    if(pos != images.size()){for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}}
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
+    for(int i = 0; i < images.size(); i++){detach(*images[i]);}
     try{
         for(int i = 0; i < number; i++){
             try{detach(*images[pos-i]);}catch(...){}
@@ -167,7 +168,8 @@ void Display_Images::next(){//removes the old picture and adds the new ones
     }catch(...){}
 }
 void Display_Images::prev(){//same as next but in reverse
-    if(pos == 0){for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}}
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
+    for(int i = 0; i < images.size(); i++){detach(*images[i]);}
     try{
         for(int i = 0; i < number; i++){
             try{detach(*images[pos+i]);}catch(...){}
