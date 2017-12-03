@@ -134,45 +134,47 @@ void Display_Images::three(){
     next();
 }
 void Display_Images::next(){
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
     try{
         for(int i = 0; i < number; i++){
             try{detach(*images[pos-i]);}catch(...){}
             try{images[pos+i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
-            attach(*images[pos+i]);
+            try{attach(*images[pos+i]);}catch(...){}
         }
         if(outbox.size() == 9){
             for(int i = 0; i < number; i++){
-                try{outbox[i*3]->put(info[pos+i][0]);}catch(...){outbox[i*3]->put(info[pos][0]);}
-                try{outbox[1+(i*3)]->put(info[pos+i][1]);}catch(...){outbox[1+(i*3)]->put(info[pos][1]);}
-                try{outbox[2+(i*3)]->put(info[pos+i][2]);}catch(...){outbox[2+(i*3)]->put(info[pos][2]);}
+                try{outbox[i*3]->put(info[pos+i][0]);}catch(...){}
+                try{outbox[1+(i*3)]->put(info[pos+i][1]);}catch(...){}
+                try{outbox[2+(i*3)]->put(info[pos+i][2]);}catch(...){}
             }
         }else{
             for(int i = 0; i < number; i++){
-                try{outbox[i*2]->put(info[pos+i][0]);}catch(...){outbox[i*2]->put(info[pos][0]);}
-                try{outbox[1+(i*2)]->put(info[pos+i][1]);}catch(...){outbox[1+(i*2)]->put(info[pos][1]);}
+                try{outbox[i*2]->put(info[pos+i][0]);}catch(...){}
+                try{outbox[1+(i*2)]->put(info[pos+i][1]);}catch(...){}
             }
         }
-        if(pos+number > images.size()){pos = images.size();}else{pos += number;}
+        if(pos+number > images.size()){pos = images.size()-1;}else{pos += number;}
         redraw();
     }catch(...){}
 }
 void Display_Images::prev(){
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
     try{
         for(int i = 0; i < number; i++){
-            try{detach(*images[pos+i]);}catch(...){detach(*images[pos]);}
+            try{detach(*images[pos+i]);}catch(...){}
             try{images[pos-i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
-            attach(*images[pos-i]);
+            try{attach(*images[pos-i]);}catch(...){}
         }
         if(outbox.size() == 9){
             for(int i = 0; i < number; i++){
-                try{outbox[i*3]->put(info[pos-i][0]);}catch(...){outbox[i*3]->put(info[pos][0]);}
-                try{outbox[1+(i*3)]->put(info[pos-i][1]);}catch(...){outbox[1+(i*3)]->put(info[pos][1]);}
-                try{outbox[2+(i*3)]->put(info[pos-i][2]);}catch(...){outbox[2+(i*3)]->put(info[pos][2]);}
+                try{outbox[i*3]->put(info[pos-i][0]);}catch(...){}
+                try{outbox[1+(i*3)]->put(info[pos-i][1]);}catch(...){}
+                try{outbox[2+(i*3)]->put(info[pos-i][2]);}catch(...){}
             }
         }else{
             for(int i = 0; i < number; i++){
-                try{outbox[i*2]->put(info[pos-i][0]);}catch(...){outbox[i*2]->put(info[pos][0]);}
-                try{outbox[1+(i*2)]->put(info[pos-i][1]);}catch(...){outbox[1+(i*2)]->put(info[pos][1]);}
+                try{outbox[i*2]->put(info[pos-i][0]);}catch(...){}
+                try{outbox[1+(i*2)]->put(info[pos-i][1]);}catch(...){}
             }
         }
         if(pos-number < 0){pos = 0;}else{pos -= number;}
