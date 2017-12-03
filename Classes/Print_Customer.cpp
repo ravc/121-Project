@@ -20,7 +20,7 @@ custs(c)
     back_button.hide();
 }
 
-void Print_Customer::show_all(){
+void Print_Customer::show_all(){//reshows the window
     show();
     print_all_button.show();
     print_neg_button.show();
@@ -29,12 +29,12 @@ void Print_Customer::show_all(){
 void Print_Customer::exit(){
     hide();
 }
-void Print_Customer::back(){
+void Print_Customer::back(){//goes back to the main print customer window
     print_all_button.show();
     print_neg_button.show();
     back_button.hide();
 }
-int Print_Customer::print_all(){
+int Print_Customer::print_all(){//goes to print all customers
     back_button.show();
     print_all_button.hide();
     print_neg_button.hide();
@@ -44,7 +44,7 @@ int Print_Customer::print_all(){
         return gui_main();
     }
 }
-int Print_Customer::print_neg(){
+int Print_Customer::print_neg(){//prints the negative customers
     back_button.show();
     print_all_button.hide();
     print_neg_button.hide();
@@ -55,7 +55,7 @@ int Print_Customer::print_neg(){
             cu.push_back(custs[i]);
         }
     }
-    if(cu.size() == 0){
+    if(cu.size() == 0){//throws an error window if the are no negative balances
         while(true){
             Error_Window win(Point(200,200),300,200,"No Negative Balances");
             return gui_main();

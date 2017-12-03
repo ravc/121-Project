@@ -26,7 +26,7 @@ void Print_Places::exit(){
 int Print_Places::next(){
     vector<Place_Info> match;
     string looking = tag();
-    for(int i = 0; i < places.size(); i++){
+    for(int i = 0; i < places.size(); i++){//looks for places that match a tag
         for(int j = 0; j < places[i].getTags().size(); j++){
             if(looking == places[i].getTags()[j]){
                 match.push_back(places[i]);
@@ -35,13 +35,13 @@ int Print_Places::next(){
         }
     }
     hide();
-    if(match.size() == 0){
+    if(match.size() == 0){//error window if no matches are found
         while(true){
             Error_Window win(Point(200,200),300,200,"No Locations Found");
             return gui_main();
         }
     }
-    while(true){
+    while(true){//starts new window for displaying images
         Display_Images win(Point(100,100),600,400,"My Ride",match);
         return gui_main();
     }

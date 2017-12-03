@@ -2,6 +2,8 @@
 # define Error_Window_H
 #include "Error_Window.h"
 
+//basic window to use for giving errors to the user
+
 Error_Window::Error_Window(Point xy, int w, int h, const string& error):
 
 Window(xy,w,h,"Error"),

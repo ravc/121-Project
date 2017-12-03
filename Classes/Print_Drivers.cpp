@@ -27,7 +27,7 @@ void Print_Drivers::show_window(){
 int Print_Drivers::distance(){
     string d = distance_box.get_string();
     double dis = atof(d.c_str());
-    if(dis >= 0){return dis;}else{
+    if(dis >= 0){return dis;}else{//error if there is a negative number or a string is used
         while(true){
             Error_Window win(Point(200,200),300,200,"Not a valid distance");
             return gui_main();
@@ -35,8 +35,7 @@ int Print_Drivers::distance(){
     }
 }
 string Print_Drivers::tag(){
-    string t = tag_box.get_string();
-    return t;
+    return tag_box.get_string();;
 }
 void Print_Drivers::exit(){
     hide();
@@ -46,7 +45,7 @@ int Print_Drivers::next(){
     string t = tag();
     vector<Place_Info> p;
     vector<drivers> d;
-    for(int i = 0; i < places.size(); i++){
+    for(int i = 0; i < places.size(); i++){//finds all places with the same tag
         for(int j = 0; j < places[i].getTags().size(); j++){
             if(places[i].getTags()[j] == t){
                 p.push_back(places[i]);
@@ -54,7 +53,7 @@ int Print_Drivers::next(){
         }
     }
     for(int i = 0; i < driver.size(); i++){
-        for(int j = 0; j < p.size(); j++){
+        for(int j = 0; j < p.size(); j++){//find all drivers within the distance given
           if(l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation())<=dis){
                 d.push_back(driver[i]);
                 break;
@@ -63,7 +62,7 @@ int Print_Drivers::next(){
     }
     hide();
     while(true){
-        if(d.size() == 0){
+        if(d.size() == 0){//error window if there are no drivers
             Error_Window win(Point(200,200),300,200,"No Drivers found");
             return gui_main();
         }else{

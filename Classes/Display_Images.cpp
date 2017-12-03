@@ -18,16 +18,18 @@ custs(c)
     attach(one_button);
     attach(two_button);
     attach(three_button);
-    for(int i = 0; i < custs.size(); i++){
+    for(int i = 0; i < custs.size(); i++){ //gets all the basic info ready to display
         images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),custs[i].image()));
         images[i]->resize(100,100);
         info.push_back({"Name: " + custs[i].getName(), "Balance: " + to_string(custs[i].getAccountBalance())});
     }
     attach(*images[0]);
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 3; i++){//gets the outboxes ready
         outbox.push_back(new Out_box(Point(i*x_max()/3,170),x_max()/3-5,20,""));
         outbox.push_back(new Out_box(Point(i*x_max()/3,190),x_max()/3-5,20,""));
     }
+    
+    //attach all outboxes and set base info
     for(int i = 0; i < outbox.size(); i++){attach(*outbox[i]);}
     outbox[0]->put(info[0][0]);
     outbox[1]->put(info[0][1]);
@@ -49,17 +51,19 @@ driver(d)
     attach(one_button);
     attach(two_button);
     attach(three_button);
-    for(int i = 0; i < driver.size(); i++){
+    for(int i = 0; i < driver.size(); i++){//gets all the basic info ready to display
         images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),driver[i].image()));
         images[i]->resize(100,100);
         info.push_back({"Name: " + driver[i].getName(), "Lat: " + to_string(driver[i].getCurrentLocation().getLatitude()) + " Lon: " + to_string(driver[i].getCurrentLocation().getLongitude()), "Balance: " + to_string(driver[i].getCurrentPaycheck())});
     }
     attach(*images[0]);
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 3; i++){//gets the outboxes ready
         outbox.push_back(new Out_box(Point(i*x_max()/3,170),x_max()/3-5,20,""));
         outbox.push_back(new Out_box(Point(i*x_max()/3,190),x_max()/3-5,20,""));
         outbox.push_back(new Out_box(Point(i*x_max()/3,210),x_max()/3-5,20,""));
     }
+    
+    //attach all outboxes and set base info
     for(int i = 0; i < outbox.size(); i++){attach(*outbox[i]);}
     outbox[0]->put(info[0][0]);
     outbox[1]->put(info[0][1]);
@@ -82,7 +86,7 @@ places(p)
     attach(one_button);
     attach(two_button);
     attach(three_button);
-    for(int i = 0; i < places.size(); i++){
+    for(int i = 0; i < places.size(); i++){//gets all the basic info ready to display
         images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),places[i].image()));
         images[i]->resize(100,100);
         string t;
@@ -92,11 +96,13 @@ places(p)
         info.push_back({"Name: " + places[0].getName(), "Location: " + places[0].getAddress(), "Tags: " + t});
     }
     attach(*images[0]);
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 3; i++){//gets the outboxes ready
         outbox.push_back(new Out_box(Point(i*x_max()/3,170),x_max()/3-5,20,""));
         outbox.push_back(new Out_box(Point(i*x_max()/3,190),x_max()/3-5,20,""));
         outbox.push_back(new Out_box(Point(i*x_max()/3,210),x_max()/3-5,20,""));
     }
+    
+    //attach all outboxes and set base info
     for(int i = 0; i < outbox.size(); i++){attach(*outbox[i]);}
     outbox[0]->put(info[0][0]);
     outbox[1]->put(info[0][1]);
@@ -106,6 +112,8 @@ places(p)
 void Display_Images::exit(){
     hide();
 }
+
+//all the number functions set the number of images to show and clear any starts from beginning
 void Display_Images::one(){
     number = 1;
     pos = 0;
@@ -133,8 +141,9 @@ void Display_Images::three(){
     for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
     next();
 }
-void Display_Images::next(){
-    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
+
+void Display_Images::next(){//removes the old picture and adds the new ones
+    if(pos != images.size()){for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}}
     try{
         for(int i = 0; i < number; i++){
             try{detach(*images[pos-i]);}catch(...){}
@@ -153,12 +162,12 @@ void Display_Images::next(){
                 try{outbox[1+(i*2)]->put(info[pos+i][1]);}catch(...){}
             }
         }
-        if(pos+number > images.size()){pos = images.size()-1;}else{pos += number;}
+        if(pos+number >= images.size()){pos = images.size();}else{pos += number;}
         redraw();
     }catch(...){}
 }
-void Display_Images::prev(){
-    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
+void Display_Images::prev(){//same as next but in reverse
+    if(pos == 0){for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}}
     try{
         for(int i = 0; i < number; i++){
             try{detach(*images[pos+i]);}catch(...){}
@@ -177,7 +186,7 @@ void Display_Images::prev(){
                 try{outbox[1+(i*2)]->put(info[pos-i][1]);}catch(...){}
             }
         }
-        if(pos-number < 0){pos = 0;}else{pos -= number;}
+        if(pos-number <= 0){pos = 0;}else{pos -= number;}
         redraw();
     }catch(...){}
 }
