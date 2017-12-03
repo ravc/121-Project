@@ -36,9 +36,9 @@ displayMenu(Point(490,20),100,20,Menu::vertical,"Display")
     placeMenu.attach(new Button(Point(0, 0), 0, 0, "Remove Place", cb_removePlace));
     rideMenu.attach(new Button(Point(0, 0), 0, 0, "Pay Balance", cb_payBalance));
     rideMenu.attach(new Button(Point(0, 0), 0, 0, "Request Ride", cb_requestRide));
-    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Customers", cb_displayCustomers));
-    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Drivers", cb_displayDrivers));
-    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Display Places", cb_displayPlaces));
+    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Customers", cb_displayCustomers));
+    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Drivers", cb_displayDrivers));
+    displayMenu.attach(new Button(Point(0, 0), 0, 0, "Places", cb_displayPlaces));
     attach(quit_button);
     attach(cust_menu_button);
     attach(driver_menu_button);
