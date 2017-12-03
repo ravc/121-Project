@@ -9,6 +9,7 @@
 #include "Customer.h"
 #include "AddMoney.h"
 #include "makeTransaction.h"
+#include "add_remove_window.h"
 
 Main_Window::Main_Window(Point xy, int w, int h, const string& title, vector<customers>& inputCustomers, vector<drivers>& inputDrivers, vector<Place_Info>& inputPlaces) : //setting up the window and buttons
 Window(xy, w, h, title),
@@ -109,69 +110,87 @@ void Main_Window::cb_displayMenuButton(Address, Address pw) {
 }
 
 void Main_Window::addCustomer() {
-    
+    while (true) {
+        add_cust_window win(Point(100, 100), 400, 400, "Add Customer", listOfCustomers);
+        return gui_main();
+    }
 }
 void Main_Window::cb_addCustomer(Address, Address pw) {
     reference_to<Main_Window>(pw).addCustomer();
 }
 
 void Main_Window::removeCustomer() {
-    
+    while (true) {
+        remove_cust_window win(Point(100, 100), 400, 400, "Remove Customer", listOfCustomers);
+        return gui_main();
+    }
 }
 void Main_Window::cb_removeCustomer(Address, Address pw) {
     reference_to<Main_Window>(pw).removeCustomer();
 }
 
 void Main_Window::addDriver() {
-    
+    while (true) {
+        add_driver_window win(Point(100, 100), 400, 400, "Add Driver", listOfDrivers);
+        return gui_main();
+    }
 }
 void Main_Window::cb_addDriver(Address, Address pw) {
     reference_to<Main_Window>(pw).addDriver();
 }
 
 void Main_Window::removeDriver() {
-    
+    while (true) {
+        remove_driver_window win(Point(100, 100), 400, 400, "Remove Driver", listOfDrivers);
+        return gui_main();
+    }
 }
 void Main_Window::cb_removeDriver(Address, Address pw) {
     reference_to<Main_Window>(pw).removeDriver();
 }
 
 void Main_Window::addPlace() {
-    
+    while (true) {
+        add_place_window win(Point(100, 100), 400, 400, "Add Place", listOfPlaces);
+        return gui_main();
+    }
 }
 void Main_Window::cb_addPlace(Address, Address pw) {
     reference_to<Main_Window>(pw).addPlace();
 }
 
 void Main_Window::removePlace() {
-    
+    while (true) {
+        remove_place_window win(Point(100, 100), 400, 400, "Remove Place", listOfPlaces);
+        return gui_main();
+    }
 }
 void Main_Window::cb_removePlace(Address, Address pw) {
     reference_to<Main_Window>(pw).removePlace();
 }
 
 int Main_Window::payBalance() {
-	hide();
-	while (true) {
-		paymentWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
-		return gui_main();
-	}
+    hide();
+    while (true) {
+        paymentWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
+        return gui_main();
+    }
 }
 void Main_Window::cb_payBalance(Address, Address pw) {
     reference_to<Main_Window>(pw).payBalance();
-	reference_to<Main_Window>(pw).show_main_window();
+    reference_to<Main_Window>(pw).show_main_window();
 }
 
 int Main_Window::requestRide() {
-	hide();
-	while (true) {
-		rideWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
-		return gui_main();
-	}
+    hide();
+    while (true) {
+        rideWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
+        return gui_main();
+    }
 }
 void Main_Window::cb_requestRide(Address, Address pw) {
     reference_to<Main_Window>(pw).requestRide();
-	reference_to<Main_Window>(pw).show_main_window();
+    reference_to<Main_Window>(pw).show_main_window();
 }
 
 int Main_Window::displayCustomers() {
