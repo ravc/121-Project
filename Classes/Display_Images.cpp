@@ -159,7 +159,7 @@ void Display_Images::next(){
 void Display_Images::prev(){
     try{
         for(int i = 0; i < number; i++){
-            try{detach(*images[pos+i]);}catch(...){}
+            try{detach(*images[pos+i]);}catch(...){detach(*images[pos]);}
             try{images[pos-i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
             attach(*images[pos-i]);
         }

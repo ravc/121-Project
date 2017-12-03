@@ -2,6 +2,7 @@
 # define Print_Customer_H
 #include "Print_Customer.h"
 #include "Display_Images.h"
+#include "Error_Window.h"
 
 Print_Customer::Print_Customer(Point xy, int w, int h, const string& title, vector<customers>& c):
 
@@ -52,6 +53,12 @@ int Print_Customer::print_neg(){
     for(int i = 0; i < custs.size(); i++){
         if(custs[i].getAccountBalance() < 0){
             cu.push_back(custs[i]);
+        }
+    }
+    if(cu.size() == 0){
+        while(true){
+            Error_Window win(Point(200,200),300,200,"No Negative Balances");
+            return gui_main();
         }
     }
     while(true){
