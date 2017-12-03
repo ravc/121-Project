@@ -118,7 +118,7 @@ void Display_Images::next(){
     try{
         for(int i = 0; i < number; i++){
             images[pos+i+1]->reposition(Point(150*i,50));
-            detach(*images[pos-i]);
+            try{detach(*images[pos-i]);}catch(...){}
             attach(*images[pos+i+1]);
         }
         pos += number;
@@ -129,7 +129,7 @@ void Display_Images::prev(){
     try{
         for(int i = 0; i < number; i++){
             images[pos-i-1]->reposition(Point(150*i,50));
-            detach(*images[pos+i]);
+            try{detach(*images[pos+i]);}catch(...){}
             attach(*images[pos-i-1]);
         }
         pos -= number;
