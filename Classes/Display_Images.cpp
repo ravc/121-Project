@@ -23,7 +23,12 @@ custs(c)
         images[i]->resize(100,100);
     }
     attach(*images[0]);
-    
+    Out_box name = Out_box(Point(0,170),170,20,"");
+    Out_box bal = Out_box(Point(0,190),170,20,"");
+    attach(name);
+    attach(bal);
+    bal.put("Balance: " + to_string(custs[0].getAccountBalance()));
+    name.put("Name: " + custs[0].getName());
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):

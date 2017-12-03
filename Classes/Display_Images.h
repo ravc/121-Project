@@ -19,7 +19,6 @@ private:
     vector<drivers> driver;
     vector<Place_Info> places;
     vector<Image*> images;
-    vector<Fl_Box*> boxes;
     
     int number = 1;
     int pos = 0;
@@ -30,9 +29,6 @@ private:
     Button three_button;
     Button next_button;
     Button prev_button;
-    
-    Fl_Box* image_box;
-    Fl_JPEG_Image* image;
     
     void exit();
     
