@@ -1,9 +1,9 @@
 3
 Jeff_Gorden 100 13.405 13.505 jeffPicture.jpg
 Dale_Earnhardt 125 40.23 23.4 dalePicture.jpg
-Kyle_Busch 159.703 30.6185 96.3365 kylePicture.jpg
+Kyle_Busch 150 45.23 85.34 kylePicture.jpg
 5
-Alex 12080.6 alexPicture.jpg
+Alex 12050 alexPicture.jpg
 Billy 35 billyPicture.jpg
 Chris 26 chrisPicture.jpg
 David 20 davidPicture.jpg

@@ -1,14 +1,14 @@
 3
-Jeff_Gordon 6708.62 40.7823 -73.9654 jeffPicture.jpg
-Alain_Prost 100 30.2769 -97.7475 alexPicture.jpg
-Trey 23.45 34 54 astrosPicture.jpg
+Jeff_Gorden 100 13.405 13.505 jeffPicture.jpg
+Dale_Earnhardt 125 40.23 23.40 dalePicture.jpg
+Kyle_Busch 150 45.23 85.34 kylePicture.jpg
 5
-Hughey -5973.48 billyPicture.jpg
-Dewey 10 chrisPicture.jpg
-Louie 20 dalePicture.jpg
-Nic 681.24 davidPicture.jpg
-John 45 ericaPicture.jpg
+Alex 23 alexPicture.jpg
+Billy 35 billyPicture.jpg
+Chris 26 chrisPicture.jpg
+David 20 davidPicture.jpg
+Erica 78 ericaPicture.jpg
 3
-CLL College_Station 30.5885 -96.3639 2 airport car_rental hebPicture.jpg
-Central_Park New_York 40.7823 -73.9654 3 park playground  kylePicture.jpg
-Library library_street 23 32 3 Books kids study tamuPicture.jpg
+TAMU 400_Bizzel_St. 30.6185 96.3365 5 school students aggies sports computerScience tamuPicture.jpg
+HEB 1900_Texas_Ave. 30.3642 96.199 3 store students groceries hebPicture.jpg
+minuteMaidPark 501_Crawford_St. 29.4526 95.2119 4 astros baseball sports stadium astrosPicture.jpg

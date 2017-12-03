@@ -63,6 +63,26 @@ void Main_Window::show_main_window(){
     show();
 }
 void Main_Window::quit(){
+		ofstream ost{"t.txt"};
+		if (!ost) error("Can't open output file ", "t.txt");
+		ost << listOfDrivers.size() << endl;
+		for (int i = 0; i < listOfDrivers.size(); i++) {
+			ost << listOfDrivers[i].getName() << " " << listOfDrivers[i].getCurrentPaycheck() << " "
+				<< listOfDrivers[i].getCurrentLocation().getLatitude() << " " << listOfDrivers[i].getCurrentLocation().getLongitude() << " " << listOfDrivers[i].image() << endl;
+		}
+		ost << listOfCustomers.size() << endl;
+		for (int i = 0; i < listOfCustomers.size(); i++) {
+			ost << listOfCustomers[i].getName() << " " << listOfCustomers[i].getAccountBalance() << " " << listOfCustomers[i].image() << endl;
+		}
+		ost << listOfPlaces.size() << endl;
+		for (int i = 0; i < listOfPlaces.size(); i++) {
+			ost << listOfPlaces[i].getName() << " " << listOfPlaces[i].getAddress() << " " << listOfPlaces[i].getLocation().getLatitude() << " " << listOfPlaces[i].getLocation().getLongitude() << " " << listOfPlaces[i].getTags().size();
+			for (int j = 0; j < listOfPlaces[i].getTags().size(); j++) {
+				ost << " " << listOfPlaces[i].getTags()[j];
+			}
+			ost << " " << listOfPlaces[i].image() << endl;
+				ost << endl;
+		}
     hide();
 }
 void Main_Window::cb_quit(Address, Address pw){
@@ -172,7 +192,7 @@ void Main_Window::cb_removePlace(Address, Address pw) {
 int Main_Window::payBalance() {
     hide();
     while (true) {
-        paymentWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
+        paymentWindow win(Point(100, 100), 600, 400, "Pay Balance", listOfCustomers, listOfPlaces, listOfDrivers);
         return gui_main();
     }
 }
@@ -184,7 +204,7 @@ void Main_Window::cb_payBalance(Address, Address pw) {
 int Main_Window::requestRide() {
     hide();
     while (true) {
-        rideWindow win(Point(100, 100), 600, 400, "My Ride", listOfCustomers, listOfPlaces, listOfDrivers);
+        rideWindow win(Point(100, 100), 600, 400, "Request Ride", listOfCustomers, listOfPlaces, listOfDrivers);
         return gui_main();
     }
 }
