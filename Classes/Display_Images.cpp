@@ -52,7 +52,7 @@ driver(d)
     for(int i = 0; i < driver.size(); i++){
         images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),driver[i].image()));
         images[i]->resize(100,100);
-        info.push_back({"Name: " + driver[0].getName(), "Lat: " + to_string(driver[0].getCurrentLocation().getLatitude()) + " Lon: " + to_string(driver[0].getCurrentLocation().getLongitude()), "Balance: " + to_string(driver[0].getCurrentPaycheck())});
+        info.push_back({"Name: " + driver[i].getName(), "Lat: " + to_string(driver[i].getCurrentLocation().getLatitude()) + " Lon: " + to_string(driver[i].getCurrentLocation().getLongitude()), "Balance: " + to_string(driver[i].getCurrentPaycheck())});
     }
     attach(*images[0]);
     for(int i = 0; i < 3; i++){
@@ -87,7 +87,7 @@ places(p)
         images[i]->resize(100,100);
         string t;
         for(int j = 0; j < places[i].getTags().size(); j++){
-            t += places[j].getTags()[j] + ", ";
+            t += places[i].getTags()[j] + ", ";
         }
         info.push_back({"Name: " + places[0].getName(), "Location: " + places[0].getAddress(), "Tags: " + t});
     }

@@ -57,6 +57,7 @@ int Print_Drivers::next(){
         for(int j = 0; j < p.size(); j++){
           if(l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation())<=dis){
                 d.push_back(driver[i]);
+                break;
             }
         }
     }

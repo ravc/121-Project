@@ -2,6 +2,7 @@
 #define Print_Places_H
 #include "Print_Places.h"
 #include "Display_Images.h"
+#include "Error_Window.h"
 
 Print_Places::Print_Places(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
 
@@ -34,6 +35,12 @@ int Print_Places::next(){
         }
     }
     hide();
+    if(match.size() == 0){
+        while(true){
+            Error_Window win(Point(200,200),300,200,"No Locations Found");
+            return gui_main();
+        }
+    }
     while(true){
         Display_Images win(Point(100,100),600,400,"My Ride",match);
         return gui_main();
