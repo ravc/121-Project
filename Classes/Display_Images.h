@@ -19,6 +19,8 @@ private:
     vector<drivers> driver;
     vector<Place_Info> places;
     vector<Image*> images;
+    vector< vector<string> > info;
+    vector<Out_box*> outbox;
     
     int number = 1;
     int pos = 0;

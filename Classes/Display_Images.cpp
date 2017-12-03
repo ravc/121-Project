@@ -19,16 +19,18 @@ custs(c)
     attach(two_button);
     attach(three_button);
     for(int i = 0; i < custs.size(); i++){
-        images.push_back(new Image(Point(150*i,50),custs[i].image()));
+        images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),custs[i].image()));
         images[i]->resize(100,100);
+        info.push_back({"Name: " + custs[i].getName(), "Balance: " + to_string(custs[i].getAccountBalance())});
     }
     attach(*images[0]);
-    Out_box name = Out_box(Point(0,170),170,20,"");
-    Out_box bal = Out_box(Point(0,190),170,20,"");
-    attach(name);
-    attach(bal);
-    bal.put("Balance: " + to_string(custs[0].getAccountBalance()));
-    name.put("Name: " + custs[0].getName());
+    for(int i = 0; i < 3; i++){
+        outbox.push_back(new Out_box(Point(i*x_max()/3,170),x_max()/3-5,20,""));
+        outbox.push_back(new Out_box(Point(i*x_max()/3,190),x_max()/3-5,20,""));
+    }
+    for(int i = 0; i < outbox.size(); i++){attach(*outbox[i]);}
+    outbox[0]->put(info[0][0]);
+    outbox[1]->put(info[0][1]);
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<drivers>& d):
@@ -48,19 +50,20 @@ driver(d)
     attach(two_button);
     attach(three_button);
     for(int i = 0; i < driver.size(); i++){
-        images.push_back(new Image(Point(150*i,50),driver[i].image()));
+        images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),driver[i].image()));
         images[i]->resize(100,100);
+        info.push_back({"Name: " + driver[0].getName(), "Lat: " + to_string(driver[0].getCurrentLocation().getLatitude()) + " Lon: " + to_string(driver[0].getCurrentLocation().getLongitude()), "Balance: " + to_string(driver[0].getCurrentPaycheck())});
     }
     attach(*images[0]);
-    Out_box name = Out_box(Point(0,170),170,20,"");
-    Out_box loc = Out_box(Point(0,190),170,20,"");
-    Out_box bal = Out_box(Point(0,210),170,20,"");
-    attach(name);
-    attach(loc);
-    attach(bal);
-    name.put("Name: " + driver[0].getName());
-    loc.put("Lat: " + to_string(driver[0].getCurrentLocation().getLatitude()) + " Lon: " + to_string(driver[0].getCurrentLocation().getLongitude()));
-    bal.put("Balance: " + to_string(driver[0].getCurrentPaycheck()));
+    for(int i = 0; i < 3; i++){
+        outbox.push_back(new Out_box(Point(i*x_max()/3,170),x_max()/3-5,20,""));
+        outbox.push_back(new Out_box(Point(i*x_max()/3,190),x_max()/3-5,20,""));
+        outbox.push_back(new Out_box(Point(i*x_max()/3,210),x_max()/3-5,20,""));
+    }
+    for(int i = 0; i < outbox.size(); i++){attach(*outbox[i]);}
+    outbox[0]->put(info[0][0]);
+    outbox[1]->put(info[0][1]);
+    outbox[2]->put(info[0][2]);
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
@@ -80,23 +83,24 @@ places(p)
     attach(two_button);
     attach(three_button);
     for(int i = 0; i < places.size(); i++){
-        images.push_back(new Image(Point(150*i,50),places[i].image()));
+        images.push_back(new Image(Point(((i+1)*x_max()/3)-155,50),places[i].image()));
         images[i]->resize(100,100);
+        string t;
+        for(int j = 0; j < places[i].getTags().size(); j++){
+            t += places[j].getTags()[j] + ", ";
+        }
+        info.push_back({"Name: " + places[0].getName(), "Location: " + places[0].getAddress(), "Tags: " + t});
     }
     attach(*images[0]);
-    Out_box name = Out_box(Point(0,170),170,20,"");
-    Out_box tag = Out_box(Point(0,190),170,20,"");
-    Out_box loc = Out_box(Point(0,210),170,20,"");
-    attach(name);
-    attach(tag);
-    attach(loc);
-    name.put("Name: " + places[0].getName());
-    loc.put("Location: " + places[0].getAddress());
-    string t;
-    for(int i = 0; i < places[0].getTags().size(); i++){
-        t += places[0].getTags()[i] + ", ";
+    for(int i = 0; i < 3; i++){
+        outbox.push_back(new Out_box(Point(i*x_max()/3,170),x_max()/3-5,20,""));
+        outbox.push_back(new Out_box(Point(i*x_max()/3,190),x_max()/3-5,20,""));
+        outbox.push_back(new Out_box(Point(i*x_max()/3,210),x_max()/3-5,20,""));
     }
-    tag.put("Tags: " + t);
+    for(int i = 0; i < outbox.size(); i++){attach(*outbox[i]);}
+    outbox[0]->put(info[0][0]);
+    outbox[1]->put(info[0][1]);
+    outbox[2]->put(info[0][2]);
 }
 
 void Display_Images::exit(){
@@ -104,35 +108,74 @@ void Display_Images::exit(){
 }
 void Display_Images::one(){
     number = 1;
+    pos = 0;
+    for(int i = 0; i < images.size(); i++){
+        try{detach(*images[i]);}catch(...){}
+    }
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
     next();
 }
 void Display_Images::two(){
     number = 2;
+    pos = 0;
+    for(int i = 0; i < images.size(); i++){
+        try{detach(*images[i]);}catch(...){}
+    }
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
     next();
 }
 void Display_Images::three(){
     number = 3;
+    pos = 0;
+    for(int i = 0; i < images.size(); i++){
+        try{detach(*images[i]);}catch(...){}
+    }
+    for(int i = 0; i < outbox.size(); i++){outbox[i]->put("");}
     next();
 }
 void Display_Images::next(){
     try{
         for(int i = 0; i < number; i++){
-            images[pos+i+1]->reposition(Point(150*i,50));
             try{detach(*images[pos-i]);}catch(...){}
-            attach(*images[pos+i+1]);
+            try{images[pos+i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
+            attach(*images[pos+i]);
         }
-        pos += number;
+        if(outbox.size() == 9){
+            for(int i = 0; i < number; i++){
+                try{outbox[i*3]->put(info[pos+i][0]);}catch(...){outbox[i*3]->put(info[pos][0]);}
+                try{outbox[1+(i*3)]->put(info[pos+i][1]);}catch(...){outbox[1+(i*3)]->put(info[pos][1]);}
+                try{outbox[2+(i*3)]->put(info[pos+i][2]);}catch(...){outbox[2+(i*3)]->put(info[pos][2]);}
+            }
+        }else{
+            for(int i = 0; i < number; i++){
+                try{outbox[i*2]->put(info[pos+i][0]);}catch(...){outbox[i*2]->put(info[pos][0]);}
+                try{outbox[1+(i*2)]->put(info[pos+i][1]);}catch(...){outbox[1+(i*2)]->put(info[pos][1]);}
+            }
+        }
+        if(pos+number > images.size()){pos = images.size();}else{pos += number;}
         redraw();
     }catch(...){}
 }
 void Display_Images::prev(){
     try{
         for(int i = 0; i < number; i++){
-            images[pos-i-1]->reposition(Point(150*i,50));
             try{detach(*images[pos+i]);}catch(...){}
-            attach(*images[pos-i-1]);
+            try{images[pos-i]->reposition(Point(((i+1)*x_max()/3)-155,50));}catch(...){}
+            attach(*images[pos-i]);
         }
-        pos -= number;
+        if(outbox.size() == 9){
+            for(int i = 0; i < number; i++){
+                try{outbox[i*3]->put(info[pos-i][0]);}catch(...){outbox[i*3]->put(info[pos][0]);}
+                try{outbox[1+(i*3)]->put(info[pos-i][1]);}catch(...){outbox[1+(i*3)]->put(info[pos][1]);}
+                try{outbox[2+(i*3)]->put(info[pos-i][2]);}catch(...){outbox[2+(i*3)]->put(info[pos][2]);}
+            }
+        }else{
+            for(int i = 0; i < number; i++){
+                try{outbox[i*2]->put(info[pos-i][0]);}catch(...){outbox[i*2]->put(info[pos][0]);}
+                try{outbox[1+(i*2)]->put(info[pos-i][1]);}catch(...){outbox[1+(i*2)]->put(info[pos][1]);}
+            }
+        }
+        if(pos-number < 0){pos = 0;}else{pos -= number;}
         redraw();
     }catch(...){}
 }
