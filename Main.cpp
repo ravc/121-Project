@@ -55,7 +55,7 @@ int main(){
     loadCustomers(ist, listOfCustomers);
     loadPlaces(ist, listOfPlaces);
     while(true){
-        Main_Window win(Point(100,100),600,80,"My Ride",listOfCustomers,listOfDrivers,listOfPlaces);
+        Main_Window win(Point(100,100),800,200,"My Ride",listOfCustomers,listOfDrivers,listOfPlaces);
         return gui_main();
     }
 }
