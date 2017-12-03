@@ -4,7 +4,7 @@
 #include "makeTransaction.h"
 #include <cmath>
 
-rideWindow::rideWindow(Point xy, int w, int h, const string& title, vector<customers>inputCustomers, vector<Place_Info>inputPlaces, vector<drivers>inputDrivers) : Window(xy, w, h, title),
+rideWindow::rideWindow(Point xy, int w, int h, const string& title, vector<customers>&inputCustomers, vector<Place_Info>&inputPlaces, vector<drivers>&inputDrivers) : Window(xy, w, h, title),
 listOfCustomers(inputCustomers),
 listOfPlaces(inputPlaces),
 listOfDrivers(inputDrivers),
@@ -88,9 +88,9 @@ void rideWindow::proceed_pressed() {
 	//2: proceed is pressed at the confirmation menu (menu 2);
 	if (menu == 2) {
 		//Process the transaction
-		dr.changeLocation(fin.getLocation());
-		dr.addMoney(minDistance*.5);
-		current.addAmountOwed(minDistance);
+		listOfDrivers[dr].changeLocation(listOfPlaces[fin].getLocation());
+		listOfDrivers[dr].addMoney(minDistance*.5);
+		listOfCustomers[current].addAmountOwed(minDistance);
 		hide();
 	}
 	else
@@ -105,25 +105,28 @@ void rideWindow::proceed_pressed() {
 		bool finalCorrect = false;
 		for (int i = 0; i<listOfCustomers.size(); i++) {
 			if (listOfCustomers[i].getName() == inputName) {
-				current = listOfCustomers[i];
+				current = i;
 				nameCorrect = true;
 			}
 		}
+		cerr << "current: " << current;
 
 		for (int i = 0; i<listOfPlaces.size(); i++) {
 			if (listOfPlaces[i].getName() == startPlace) {
-				st = listOfPlaces[i];
+				st = i;
 				startCorrect = true;
 			}
 		}
+		cerr << "St: " << st;
 		for (int j = 0; j<listOfPlaces.size(); j++) {
 			if (listOfPlaces[j].getName() == finalPlace) {
-				options.push_back(listOfPlaces[j]);
+				options.push_back(j);
+				cout << "j: " << j;
 				finalCorrect = true;
 			}
 			for (int k = 0; k<listOfPlaces[j].getTags().size(); k++) {
 				if (listOfPlaces[j].getTags()[k] == finalPlace) {
-					options.push_back(listOfPlaces[j]);
+					options.push_back(j);
 					finalCorrect = true;
 				}
 			}
@@ -146,7 +149,7 @@ void rideWindow::proceed_pressed() {
 		else {
 			//Figure out which matching destination is closest
 			for (int i = 0; i<options.size(); i++) {
-				double temp = st.getLocation().getDistance(st.getLocation(), options[i].getLocation());
+				double temp =listOfPlaces[st].getLocation().getDistance(listOfPlaces[st].getLocation(), listOfPlaces[options[i]].getLocation());
 				if (temp<minDistance) {
 					minDistance = temp;
 					fin = options[i];
@@ -155,16 +158,16 @@ void rideWindow::proceed_pressed() {
 			//Figure out the correct driver
 			double driverDist = 5000000;
 			for (int i = 0; i<listOfDrivers.size(); i++) {
-				if (listOfDrivers[i].getCurrentLocation().getDistance(listOfDrivers[i].getCurrentLocation(), st.getLocation())<driverDist) {
-					dr = listOfDrivers[i];
-					driverDist = listOfDrivers[i].getCurrentLocation().getDistance(listOfDrivers[i].getCurrentLocation(), st.getLocation());
+				if (listOfDrivers[i].getCurrentLocation().getDistance(listOfDrivers[i].getCurrentLocation(), listOfPlaces[st].getLocation())<driverDist) {
+					dr = i;
+					driverDist = listOfDrivers[i].getCurrentLocation().getDistance(listOfDrivers[i].getCurrentLocation(), listOfPlaces[st].getLocation());
 				}
 			}
 			//Set all of the images for the next step
-			customerPic = new Image(Point(40, 100), current.image());
-			driverPic = new Image(Point(180, 100), dr.image());
-			startPic = new Image(Point(320, 100), st.image());
-			finalPic = new Image(Point(460, 100), fin.image());
+			customerPic = new Image(Point(40, 100), listOfCustomers[current].image());
+			driverPic = new Image(Point(180, 100), listOfDrivers[dr].image());
+			startPic = new Image(Point(320, 100), listOfPlaces[st].image());
+			finalPic = new Image(Point(460, 100), listOfPlaces[fin].image());
 
 			customerPic->resize(100, 200);
 			startPic->resize(100, 200);

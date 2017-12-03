@@ -58,7 +58,7 @@ void paymentWindow::proceed_pressed() {
 	//1: proceed is pressed on the make payment (menu 1);
 	//2: proceed is pressed at the confirmation menu (menu 2);
 	if (menu == 2) {
-		currCustomer.makePayment(moneyAdded);
+		listOfCustomers[currCustomer].makePayment(moneyAdded);
 		hide();
 	}
 	else
@@ -70,7 +70,7 @@ void paymentWindow::proceed_pressed() {
 		bool isCorrect = false;
 		for (int i = 0; i<listOfCustomers.size(); i++) {
 			if (listOfCustomers[i].getName() == inputName) {
-				currCustomer = listOfCustomers[i];
+				currCustomer = i;
 				isCorrect = true;
 			}
 		}
@@ -84,7 +84,7 @@ void paymentWindow::proceed_pressed() {
 		}
 		//Otherwise go to confirmation screen
 		else {
-			ss << "The customer is " << currCustomer.getName() << " and has a current account balance of " << currCustomer.getAccountBalance();
+			ss << "The customer is " << listOfCustomers[currCustomer].getName() << " and has a current account balance of " << listOfCustomers[currCustomer].getAccountBalance();
 			confirmation_text.set_label(ss.str());
 			notWorking.set_label("");
 			confirmation_text2.set_label("Are you sure you want to continue?");
@@ -99,7 +99,7 @@ void paymentWindow::back_pressed() {
 	//If it is at menu 1, it should exit
 	//If it is at menu 2, it should set all of the inputs back to 0 and go to the first menu
 	if (menu == 1) hide();
-	currCustomer = customers("", 0, "");
+	currCustomer = 0;
 	moneyAdded = 0;
 	inputName = "";
 	menu = 1;

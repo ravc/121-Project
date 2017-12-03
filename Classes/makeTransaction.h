@@ -7,18 +7,18 @@
 #include "Geo_Loc.h"
 
 struct rideWindow : Graph_lib::Window {
-	rideWindow(Point xy, int w, int h, const string& title,vector<customers>inputCustomers,vector<Place_Info>inputPlaces,vector<drivers>inputDrivers);
+	rideWindow(Point xy, int w, int h, const string& title,vector<customers>&inputCustomers,vector<Place_Info>&inputPlaces,vector<drivers>&inputDrivers);
 
 private:
-	vector<customers>listOfCustomers;
-	vector<drivers>listOfDrivers;
-	vector<Place_Info>listOfPlaces;
-	customers current=listOfCustomers[0];
-	Place_Info st=listOfPlaces[0];
-	drivers dr=listOfDrivers[0];
-	vector<Place_Info> options;
+	vector<customers>& listOfCustomers;
+	vector<drivers>& listOfDrivers;
+	vector<Place_Info>& listOfPlaces;
+	int current = 0;
+	int st = 0;
+	int dr = 0;
+	vector<int> options;
 	double minDistance=1000000;
-	Place_Info fin=listOfPlaces[0];
+	int fin = 0;
 	
 	int menu;
 	//MENU 1
