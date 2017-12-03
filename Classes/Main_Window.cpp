@@ -109,7 +109,7 @@ void Main_Window::cb_displayMenuButton(Address, Address pw) {
     reference_to<Main_Window>(pw).displayMenuButton();
 }
 
-void Main_Window::addCustomer() {
+int Main_Window::addCustomer() {
     while (true) {
         add_cust_window win(Point(100, 100), 400, 400, "Add Customer", listOfCustomers);
         return gui_main();
@@ -119,7 +119,7 @@ void Main_Window::cb_addCustomer(Address, Address pw) {
     reference_to<Main_Window>(pw).addCustomer();
 }
 
-void Main_Window::removeCustomer() {
+int Main_Window::removeCustomer() {
     while (true) {
         remove_cust_window win(Point(100, 100), 400, 400, "Remove Customer", listOfCustomers);
         return gui_main();
@@ -129,7 +129,7 @@ void Main_Window::cb_removeCustomer(Address, Address pw) {
     reference_to<Main_Window>(pw).removeCustomer();
 }
 
-void Main_Window::addDriver() {
+int Main_Window::addDriver() {
     while (true) {
         add_driver_window win(Point(100, 100), 400, 400, "Add Driver", listOfDrivers);
         return gui_main();
@@ -139,7 +139,7 @@ void Main_Window::cb_addDriver(Address, Address pw) {
     reference_to<Main_Window>(pw).addDriver();
 }
 
-void Main_Window::removeDriver() {
+int Main_Window::removeDriver() {
     while (true) {
         remove_driver_window win(Point(100, 100), 400, 400, "Remove Driver", listOfDrivers);
         return gui_main();
@@ -149,7 +149,7 @@ void Main_Window::cb_removeDriver(Address, Address pw) {
     reference_to<Main_Window>(pw).removeDriver();
 }
 
-void Main_Window::addPlace() {
+int Main_Window::addPlace() {
     while (true) {
         add_place_window win(Point(100, 100), 400, 400, "Add Place", listOfPlaces);
         return gui_main();
@@ -159,7 +159,7 @@ void Main_Window::cb_addPlace(Address, Address pw) {
     reference_to<Main_Window>(pw).addPlace();
 }
 
-void Main_Window::removePlace() {
+int Main_Window::removePlace() {
     while (true) {
         remove_place_window win(Point(100, 100), 400, 400, "Remove Place", listOfPlaces);
         return gui_main();

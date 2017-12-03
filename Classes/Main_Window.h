@@ -3,6 +3,7 @@
 #include "Driver.h"
 #include "Customer.h"
 #include "Graphics/GUI.h"
+#include "Graphics/Graph.h"
 
 using namespace Graph_lib;
 
@@ -46,22 +47,22 @@ private:
     void displayMenuButton();
     static void cb_displayMenuButton(Address, Address pw);
     
-    void addCustomer();
+    int addCustomer();
     static void cb_addCustomer(Address, Address pw);
     
-    void removeCustomer();
+    int removeCustomer();
     static void cb_removeCustomer(Address, Address pw);
     
-    void addDriver();
+    int addDriver();
     static void cb_addDriver(Address, Address pw);
     
-    void removeDriver();
+    int removeDriver();
     static void cb_removeDriver(Address, Address pw);
     
-    void addPlace();
+    int addPlace();
     static void cb_addPlace(Address, Address pw);
     
-    void removePlace();
+    int removePlace();
     static void cb_removePlace(Address, Address pw);
     
     int payBalance();

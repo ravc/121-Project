@@ -52,6 +52,15 @@ driver(d)
         images[i]->resize(100,100);
     }
     attach(*images[0]);
+    Out_box name = Out_box(Point(0,170),170,20,"");
+    Out_box loc = Out_box(Point(0,190),170,20,"");
+    Out_box bal = Out_box(Point(0,210),170,20,"");
+    attach(name);
+    attach(loc);
+    attach(bal);
+    name.put("Name: " + driver[0].getName());
+    loc.put("Lat: " + to_string(driver[0].getCurrentLocation().getLatitude()) + " Lon: " + to_string(driver[0].getCurrentLocation().getLongitude()));
+    bal.put("Balance: " + to_string(driver[0].getCurrentPaycheck()));
 }
 
 Display_Images::Display_Images(Point xy, int w, int h, const string& title, vector<Place_Info>& p):
@@ -75,6 +84,19 @@ places(p)
         images[i]->resize(100,100);
     }
     attach(*images[0]);
+    Out_box name = Out_box(Point(0,170),170,20,"");
+    Out_box tag = Out_box(Point(0,190),170,20,"");
+    Out_box loc = Out_box(Point(0,210),170,20,"");
+    attach(name);
+    attach(tag);
+    attach(loc);
+    name.put("Name: " + places[0].getName());
+    loc.put("Location: " + places[0].getAddress());
+    string t;
+    for(int i = 0; i < places[0].getTags().size(); i++){
+        t += places[0].getTags()[i] + ", ";
+    }
+    tag.put("Tags: " + t);
 }
 
 void Display_Images::exit(){
@@ -93,9 +115,27 @@ void Display_Images::three(){
     next();
 }
 void Display_Images::next(){
-    
+    try{
+        for(int i = 0; i < number; i++){
+            images[pos+i+1]->reposition(Point(150*i,50));
+            detach(*images[pos-i]);
+            attach(*images[pos+i+1]);
+        }
+        pos += number;
+        redraw();
+    }catch(...){}
 }
-void Display_Images::prev(){}
+void Display_Images::prev(){
+    try{
+        for(int i = 0; i < number; i++){
+            images[pos-i-1]->reposition(Point(150*i,50));
+            detach(*images[pos+i]);
+            attach(*images[pos-i-1]);
+        }
+        pos -= number;
+        redraw();
+    }catch(...){}
+}
 
 void Display_Images::cb_exit(Address, Address pw){
     reference_to<Display_Images>(pw).exit();

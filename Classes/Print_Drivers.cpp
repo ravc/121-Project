@@ -55,8 +55,7 @@ int Print_Drivers::next(){
     }
     for(int i = 0; i < driver.size(); i++){
         for(int j = 0; j < p.size(); j++){
-           cout << l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation()) << endl;
-            if(l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation())<=dis){
+          if(l.getDistance(driver[i].getCurrentLocation(), p[j].getLocation())<=dis){
                 d.push_back(driver[i]);
             }
         }
